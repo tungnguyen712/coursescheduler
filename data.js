@@ -2,7 +2,7 @@
 const majors = [
     { id: "khql", name: "Khoa học quản lý" },
     { id: "tlh", name: "Tâm lý học"},
-    { id: "qhcc", name: "Quản trị công chúng"},
+    { id: "qhcc", name: "Quan hệ công chúng"},
     { id: "qtdvdllh", name: "Quản trị dịch vụ du lịch và lữ hành" },
     { id: "bc", name: "Báo chí" },
     { id: "da", name: "Điện ảnh và Nghệ thuật đại chúng"}
