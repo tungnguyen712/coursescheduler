@@ -231,28 +231,28 @@ function renderGPATable() {
             <td class="px-6 py-4 text-center">
                 ${sub.credits}
             </td>
-            <td class="px-6 py-4">
-                <input type="number" step="0.1" min="0" max="10" placeholder="0-10" class="subject-cc-input w-16 p-1 border rounded text-center text-xs" data-id="${sub.id}" title="Điểm CC (0-10)">
+            <td class="px-6 py-4 text-center">
+                <input type="number" step="0.1" min="0" max="10" placeholder="0-10" class="subject-cc-input w-16 p-1 border rounded text-center text-xs [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" style="appearance: textfield;" data-id="${sub.id}" title="Điểm CC (0-10)">
             </td>
-            <td class="px-6 py-4">
-                <input type="number" step="0.1" min="0" max="10" placeholder="0-10" class="subject-gk-input w-16 p-1 border rounded text-center text-xs" data-id="${sub.id}" title="Điểm GK (0-10)">
+            <td class="px-6 py-4 text-center">
+                <input type="number" step="0.1" min="0" max="10" placeholder="0-10" class="subject-gk-input w-16 p-1 border rounded text-center text-xs [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" style="appearance: textfield;" data-id="${sub.id}" title="Điểm GK (0-10)">
             </td>
-            <td class="px-6 py-4">
-                <input type="number" step="0.1" min="0" max="10" placeholder="0-10" class="subject-ck-input w-16 p-1 border rounded text-center text-xs" data-id="${sub.id}" title="Điểm CK (0-10)">
+            <td class="px-6 py-4 text-center">
+                <input type="number" step="0.1" min="0" max="10" placeholder="0-10" class="subject-ck-input w-16 p-1 border rounded text-center text-xs [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" style="appearance: textfield;" data-id="${sub.id}" title="Điểm CK (0-10)">
             </td>
             <td class="px-6 py-4 text-center" id="target-${sub.id}">
                 <select class="subject-target-input w-24 p-1 border rounded text-xs" data-id="${sub.id}">
-                    <option value="4.0">A+ (9.0-10)</option>
-                    <option value="4.0" selected>A (8.5-8.9)</option>
-                    <option value="3.5">B+ (8.0-8.4)</option>
-                    <option value="3.0">B (7.0-7.9)</option>
-                    <option value="2.5">C+ (6.5-6.9)</option>
-                    <option value="2.0">C (5.5-6.4)</option>
-                    <option value="1.5">D+ (5.0-5.4)</option>
-                    <option value="1.0">D (4.0-4.9)</option>
+                    <option value="9.0">A+ (9.0-10)</option>
+                    <option value="8.5" selected>A (8.5-8.9)</option>
+                    <option value="8.0">B+ (8.0-8.4)</option>
+                    <option value="7.0">B (7.0-7.9)</option>
+                    <option value="6.5">C+ (6.5-6.9)</option>
+                    <option value="5.5">C (5.5-6.4)</option>
+                    <option value="5.0">D+ (5.0-5.4)</option>
+                    <option value="4.0">D (4.0-4.9)</option>
                 </select>
             </td>
-            <td class="px-6 py-4" id="status-${sub.id}">
+            <td class="px-6 py-4 text-center" id="status-${sub.id}">
                 <span class="text-gray-400 text-xs">-</span>
             </td>
         `;
@@ -261,12 +261,6 @@ function renderGPATable() {
 }
 
 function calculateGPA() {
-    const targetGPA = parseFloat(targetSemesterGPAInput.value);
-    if (isNaN(targetGPA)) {
-        alert("Vui lòng nhập Mục tiêu GPA học kỳ hợp lệ.");
-        return;
-    }
-
     let totalCredits = 0;
     let totalWeightedScore = 0;
     let results = [];
@@ -282,15 +276,15 @@ function calculateGPA() {
         const cc = ccInput?.value ? parseFloat(ccInput.value) : null;
         const gk = gkInput?.value ? parseFloat(gkInput.value) : null;
         const ck = ckInput?.value ? parseFloat(ckInput.value) : null;
-        const targetScore = targetInput ? parseFloat(targetInput.value) : 3.0;
+        // Target is already in 10-scale (8.5 for A, 9.0 for A+, etc.)
+        const targetScore10 = targetInput ? parseFloat(targetInput.value) : 8.5;
 
         // Calculate: If user entered CC & GK, calculate required CK
         let prediction = null;
         let requiredCK = null;
         
         if (cc !== null && !isNaN(cc) && gk !== null && !isNaN(gk)) {
-            // Convert target hệ 4 thành hệ 10
-            const targetScore10 = (targetScore / 4.0) * 10;
+            // targetScore10 is already in 10-scale
             // targetScore10 = cc * 0.1 + gk * 0.3 + ck * 0.6
             // ck = (targetScore10 - cc*0.1 - gk*0.3) / 0.6
             const needed = (targetScore10 - cc * weights.cc - gk * weights.gk);
@@ -299,17 +293,16 @@ function calculateGPA() {
             prediction = {
                 cc: cc,
                 gk: gk,
-                requiredCK: Math.min(10, Math.max(0, requiredCK)).toFixed(1)
+                requiredCK: Math.max(0, requiredCK).toFixed(1)
             };
         } else if (cc !== null && !isNaN(cc)) {
             // Only CC entered: suggest GK = CK
-            const targetScore10 = (targetScore / 4.0) * 10;
             const needed = (targetScore10 - cc * weights.cc);
             const ifEqual = needed / (weights.gk + weights.ck);
             
             prediction = {
                 cc: cc,
-                ifEqual: Math.min(10, Math.max(0, ifEqual)).toFixed(1)
+                ifEqual: Math.max(0, ifEqual).toFixed(1)
             };
         }
 
@@ -326,7 +319,7 @@ function calculateGPA() {
             cc,
             gk,
             ck,
-            targetScore,
+            targetScore10,
             prediction,
             requiredCK,
             finalScore
@@ -351,8 +344,7 @@ function calculateGPA() {
         } else if (result.finalScore !== null) {
             // All provided - show result
             const finalScore10 = result.finalScore;
-            const gpaScale = convertScore10to4(finalScore10);
-            if (gpaScale >= result.targetScore) {
+            if (finalScore10 >= result.targetScore10) {
                 statusCell.innerHTML = `<span class="text-green-600 font-bold text-xs"><i class="fas fa-check"></i> ${finalScore10.toFixed(1)}/10</span>`;
             } else {
                 statusCell.innerHTML = `<span class="text-red-600 font-bold text-xs"><i class="fas fa-times"></i> ${finalScore10.toFixed(1)}/10</span>`;
@@ -364,25 +356,25 @@ function calculateGPA() {
 
     // Display Overall Result
     gpaResult.classList.remove('hidden');
+    
+    // Check if any predictions were made
+    const hasAnyPrediction = results.some(r => r.prediction !== null);
+    
     if (totalCredits > 0) {
         const calculatedGPA = totalWeightedScore / totalCredits;
         const calcScore4 = (calculatedGPA / 10 * 4);
         
-        if (calculatedGPA >= targetGPA) {
-            gpaResult.className = "mt-6 p-4 rounded-lg bg-green-100 border border-green-300 text-green-800";
-            gpaResult.innerHTML = `
-                <h3 class="font-bold text-lg mb-2"><i class="fas fa-trophy"></i> Chúc mừng!</h3>
-                <p>GPA dự kiến của bạn là <strong>${calcScore4.toFixed(2)}</strong> (hệ 4) / <strong>${calculatedGPA.toFixed(1)}</strong> (hệ 10).</p>
-                <p>Bạn <strong>ĐẠT</strong> mục tiêu học kỳ (${targetGPA}).</p>
-            `;
-        } else {
-            gpaResult.className = "mt-6 p-4 rounded-lg bg-red-100 border border-red-300 text-red-800";
-            gpaResult.innerHTML = `
-                <h3 class="font-bold text-lg mb-2"><i class="fas fa-chart-line"></i> Cần cố gắng hơn!</h3>
-                <p>GPA dự kiến của bạn chỉ là <strong>${calcScore4.toFixed(2)}</strong> (hệ 4) / <strong>${calculatedGPA.toFixed(1)}</strong> (hệ 10).</p>
-                <p>Bạn <strong>CHƯA ĐẠT</strong> mục tiêu học kỳ (${targetGPA}).</p>
-            `;
-        }
+        gpaResult.className = "mt-6 p-4 rounded-lg bg-blue-100 border border-blue-300 text-blue-800";
+        gpaResult.innerHTML = `
+            <h3 class="font-bold text-lg mb-2"><i class="fas fa-chart-line"></i> Kết quả</h3>
+            <p>GPA của bạn là <strong>${calcScore4.toFixed(2)}</strong> (hệ 4) / <strong>${calculatedGPA.toFixed(1)}</strong> (hệ 10).</p>
+        `;
+    } else if (hasAnyPrediction) {
+        gpaResult.className = "mt-6 p-4 rounded-lg bg-blue-100 border border-blue-300 text-blue-800";
+        gpaResult.innerHTML = `
+            <h3 class="font-bold text-lg mb-2"><i class="fas fa-chart-line"></i> Dự báo</h3>
+            <p>Xem các dự báo điểm từng môn ở bên trên.</p>
+        `;
     } else {
         gpaResult.className = "mt-6 p-4 rounded-lg bg-yellow-100 border border-yellow-300 text-yellow-800";
         gpaResult.innerHTML = `
