@@ -443,10 +443,18 @@ function calculateGPA() {
         if (result.finalScore !== null) {
             // All provided - show result
             const finalScore10 = result.finalScore;
-            statusCell.innerHTML = `<div class="text-xs bg-gray-100 p-2 rounded border border-gray-300">
-                <strong class="text-gray-600">Đã hoàn thành</strong><br/>
-                <span class="text-gray-600">${finalScore10.toFixed(1)}/10</span>
-            </div>`;
+            const metTarget = finalScore10 >= result.targetScore10;
+            if (metTarget) {
+                statusCell.innerHTML = `<div class="text-xs bg-green-100 p-2 rounded border border-green-300">
+                    <strong class="text-green-700">✓ Đạt</strong><br/>
+                    <span class="text-green-600">${finalScore10.toFixed(1)}/10</span>
+                </div>`;
+            } else {
+                statusCell.innerHTML = `<div class="text-xs bg-red-100 p-2 rounded border border-red-300">
+                    <strong class="text-red-700">✗ Chưa đạt</strong><br/>
+                    <span class="text-red-600">${finalScore10.toFixed(1)}/10</span>
+                </div>`;
+            }
         } else if (result.requiredCK !== null) {
             // CC and GK provided - show required CK
             statusCell.innerHTML = `<div class="text-xs bg-blue-50 p-2 rounded border border-blue-200">
@@ -467,6 +475,14 @@ function calculateGPA() {
     // Display Overall Result
     gpaResult.classList.remove('hidden');
     
+    // Update overall GPA display
+    if (totalCredits > 0) {
+        const calculatedGPA = totalWeightedScore / totalCredits;
+        const calcScore4 = (calculatedGPA / 10 * 4);
+        document.getElementById('overallGPA').textContent = calcScore4.toFixed(2);
+        document.getElementById('totalCredits').textContent = totalCredits;
+    }
+    
     // Check if any predictions were made
     const hasAnyPrediction = results.some(r => r.prediction !== null);
     
@@ -480,6 +496,11 @@ function calculateGPA() {
             return r.finalScore >= r.targetScore10;
         });
         
+        const anyFailedTarget = results.some(r => {
+            if (r.finalScore === null) return false;
+            return r.finalScore < r.targetScore10;
+        });
+        
         if (allAchievedTarget && results.length > 0) {
             // User achieved all targets
             gpaResult.className = "mt-6 p-4 rounded-lg bg-green-100 border border-green-300 text-green-800";
@@ -487,22 +508,29 @@ function calculateGPA() {
                 <h3 class="font-bold text-lg mb-2"><i class="fas fa-trophy"></i> 🎉 Chúc mừng!</h3>
                 <p>Bạn đã đạt mục tiêu học tập! GPA của bạn là <strong>${calcScore4.toFixed(2)}</strong> (hệ 4) / <strong>${calculatedGPA.toFixed(1)}</strong> (hệ 10).</p>
             `;
+        } else if (anyFailedTarget) {
+            // User failed some targets
+            gpaResult.className = "mt-6 p-4 rounded-lg bg-red-100 border border-red-300 text-red-800";
+            gpaResult.innerHTML = `
+                <h3 class="font-bold text-lg mb-2"><i class="fas fa-exclamation-circle"></i> ⚠️ Chưa đạt mục tiêu</h3>
+                <p>Bạn chưa đạt mục tiêu ở một số môn. GPA của bạn là <strong>${calcScore4.toFixed(2)}</strong> (hệ 4) / <strong>${calculatedGPA.toFixed(1)}</strong> (hệ 10).</p>
+            `;
         } else {
             // Normal result display
-            gpaResult.className = "mt-6 p-4 rounded-lg bg-blue-100 border border-blue-300 text-blue-800";
+            gpaResult.className = "mt-6 p-4 rounded-lg bg-gradient-to-r from-blue-100 to-cyan-100 border border-blue-300 text-blue-800";
             gpaResult.innerHTML = `
                 <h3 class="font-bold text-lg mb-2"><i class="fas fa-chart-line"></i> Kết quả</h3>
                 <p>GPA của bạn là <strong>${calcScore4.toFixed(2)}</strong> (hệ 4) / <strong>${calculatedGPA.toFixed(1)}</strong> (hệ 10).</p>
             `;
         }
     } else if (hasAnyPrediction) {
-        gpaResult.className = "mt-6 p-4 rounded-lg bg-blue-100 border border-blue-300 text-blue-800";
+        gpaResult.className = "mt-6 p-4 rounded-lg bg-gradient-to-r from-blue-100 to-cyan-100 border border-blue-300 text-blue-800";
         gpaResult.innerHTML = `
             <h3 class="font-bold text-lg mb-2"><i class="fas fa-chart-line"></i> Dự báo</h3>
             <p>Xem các dự báo điểm từng môn ở bên trên.</p>
         `;
     } else {
-        gpaResult.className = "mt-6 p-4 rounded-lg bg-yellow-100 border border-yellow-300 text-yellow-800";
+        gpaResult.className = "mt-6 p-4 rounded-lg bg-gradient-to-r from-amber-100 to-yellow-100 border border-amber-300 text-amber-800";
         gpaResult.innerHTML = `
             <h3 class="font-bold text-lg mb-2"><i class="fas fa-info-circle"></i> Thông tin</h3>
             <p>Vui lòng nhập ít nhất điểm CC của một môn để dự báo, hoặc nhập đầy đủ CC, GK, CK để tính toán GPA chính xác.</p>
