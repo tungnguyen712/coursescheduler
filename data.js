@@ -34,8 +34,12 @@ const subjectsData = {
       "name": "Triết học Mác - Lênin",
       "credits": 3,
       "lecturer": "Giảng viên 001",
-      "time": { "day": 2, "start": 1, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 2,
+        "start": 1,
+        "count": 3
+      },
+      "info": "Cung cấp hệ thống quan điểm duy vật biện chứng về tự nhiên, xã hội và tư duy; là nền tảng thế giới quan và phương pháp luận chung.",
       "prerequisites": [],
       "stt": 1
     },
@@ -45,9 +49,15 @@ const subjectsData = {
       "name": "Kinh tế chính trị Mác - Lênin",
       "credits": 2,
       "lecturer": "Giảng viên 002",
-      "time": { "day": 3, "start": 4, "count": 2 },
-      "info": "",
-      "prerequisites": ["PHI1006"],
+      "time": {
+        "day": 3,
+        "start": 7,
+        "count": 2
+      },
+      "info": "Nghiên cứu các quan hệ xã hội của sản xuất và trao đổi, các quy luật kinh tế trong các phương thức sản xuất, đặc biệt là chủ nghĩa tư bản và thời kỳ quá độ lên chủ nghĩa xã hội.",
+      "prerequisites": [
+        "PHI1006"
+      ],
       "stt": 2
     },
     {
@@ -56,9 +66,15 @@ const subjectsData = {
       "name": "Chủ nghĩa xã hội khoa học",
       "credits": 2,
       "lecturer": "Giảng viên 003",
-      "time": { "day": 5, "start": 2, "count": 2 },
-      "info": "",
-      "prerequisites": ["PHI1006"],
+      "time": {
+        "day": 4,
+        "start": 2,
+        "count": 2
+      },
+      "info": "Nghiên cứu về sự chuyển biến từ chủ nghĩa tư bản lên chủ nghĩa xã hội và sứ mệnh lịch sử của giai cấp công nhân.",
+      "prerequisites": [
+        "PHI1006"
+      ],
       "stt": 3
     },
     {
@@ -67,8 +83,12 @@ const subjectsData = {
       "name": "Lịch sử Đảng Cộng sản Việt Nam",
       "credits": 2,
       "lecturer": "Giảng viên 004",
-      "time": { "day": 4, "start": 7, "count": 2 },
-      "info": "",
+      "time": {
+        "day": 5,
+        "start": 8,
+        "count": 2
+      },
+      "info": "Tìm hiểu về quá trình ra đời, phát triển, các cương lĩnh, đường lối và sự lãnh đạo của Đảng Cộng sản Việt Nam qua các thời kỳ.",
       "prerequisites": [],
       "stt": 4
     },
@@ -78,97 +98,137 @@ const subjectsData = {
       "name": "Tư tưởng Hồ Chí Minh",
       "credits": 2,
       "lecturer": "Giảng viên 005",
-      "time": { "day": 6, "start": 3, "count": 2 },
-      "info": "",
+      "time": {
+        "day": 6,
+        "start": 1,
+        "count": 2
+      },
+      "info": "Nghiên cứu hệ thống quan điểm toàn diện và sâu sắc của Chủ tịch Hồ Chí Minh về những vấn đề cơ bản của cách mạng Việt Nam.",
       "prerequisites": [],
       "stt": 5
     },
     {
       "id": "thl1057",
       "code": "THL1057",
-      "name": "Nhà nước và pháp luật đại cương",
+      "name": "Nhà nước và Pháp luật đại cương",
       "credits": 2,
       "lecturer": "Giảng viên 006",
-      "time": { "day": 7, "start": 5, "count": 2 },
-      "info": "",
-      "prerequisites": ["PHI1006"],
+      "time": {
+        "day": 2,
+        "start": 9,
+        "count": 2
+      },
+      "info": "Cung cấp kiến thức cơ bản về nguồn gốc, bản chất, chức năng của Nhà nước và Pháp luật; hệ thống pháp luật Việt Nam.",
+      "prerequisites": [
+        "PHI1006"
+      ],
       "stt": 6
     },
     {
-      "id": "flf1107-flf1407",
-      "code": "FLF1107/FLF1407",
-      "name": "Ngoại ngữ B1 (FLF1107 Tiếng Anh B1, FLF1407 Tiếng Trung Quốc B1)",
+      "id": "flf1107",
+      "code": "FLF1107",
+      "name": "Tiếng Anh B1",
       "credits": 5,
       "lecturer": "Giảng viên 007",
-      "time": { "day": 2, "start": 3, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 3,
+        "start": 1,
+        "count": 5
+      },
+      "info": "Rèn luyện 4 kỹ năng tiếng Anh (nghe, nói, đọc, viết) để đạt trình độ tương đương B1 theo khung năng lực ngoại ngữ.",
       "prerequisites": [],
       "stt": 7
     },
     {
-      "id": "evs1001",
-      "code": "EVS1001",
-      "name": "Môi trường và phát triển",
-      "credits": 2,
+      "id": "vnu1001",
+      "code": "VNU1001",
+      "name": "Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo",
+      "credits": 3,
       "lecturer": "Giảng viên 008",
-      "time": { "day": 3, "start": 6, "count": 2 },
-      "info": "",
+      "time": {
+        "day": 4,
+        "start": 7,
+        "count": 3
+      },
+      "info": "Trang bị kiến thức nền tảng về công nghệ số và cách ứng dụng AI trong học tập và công việc.",
       "prerequisites": [],
       "stt": 8
     },
     {
-      "id": "mat1078",
-      "code": "MAT1078",
-      "name": "Thống kê cho khoa học xã hội",
-      "credits": 2,
+      "id": "skill001",
+      "code": "SKILL001",
+      "name": "Kỹ năng bổ trợ",
+      "credits": 3,
       "lecturer": "Giảng viên 009",
-      "time": { "day": 5, "start": 8, "count": 2 },
-      "info": "",
+      "time": {
+        "day": 5,
+        "start": 2,
+        "count": 3
+      },
+      "info": "Các kỹ năng mềm cần thiết cho công việc và học tập (thường bao gồm các học phần như kỹ năng giao tiếp, làm việc nhóm, …, tùy theo lựa chọn cụ thể).",
       "prerequisites": [],
       "stt": 9
     },
     {
-      "id": "lin1050",
-      "code": "LIN1050",
-      "name": "Thực hành văn bản tiếng Việt",
-      "credits": 2,
+      "id": "edu001",
+      "code": "EDU001",
+      "name": "Giáo dục thể chất",
+      "credits": 4,
       "lecturer": "Giảng viên 010",
-      "time": { "day": 4, "start": 9, "count": 2 },
-      "info": "",
+      "time": {
+        "day": 6,
+        "start": 8,
+        "count": 4
+      },
+      "info": "Rèn luyện sức khỏe và thể chất thông qua các môn thể thao.",
       "prerequisites": [],
       "stt": 10
     },
     {
-      "id": "lib1050",
-      "code": "LIB1050",
-      "name": "Nhập môn năng lực thông tin",
-      "credits": 2,
+      "id": "def001",
+      "code": "DEF001",
+      "name": "Giáo dục quốc phòng - an ninh",
+      "credits": 8,
       "lecturer": "Giảng viên 011",
-      "time": { "day": 6, "start": 10, "count": 2 },
-      "info": "",
+      "time": {
+        "day": 2,
+        "start": 3,
+        "count": 5
+      },
+      "info": "Trang bị kiến thức về quốc phòng, an ninh và kỹ năng quân sự cơ bản.",
       "prerequisites": [],
       "stt": 11
     },
     {
       "id": "flh1164",
       "code": "FLH1164",
-      "name": "Ngoại ngữ Khoa học Xã hội và Nhân văn 1 (English for Humanities and Social Sciences 1)",
+      "name": "Tiếng Anh Khoa học Xã hội và Nhân văn 1",
       "credits": 3,
       "lecturer": "Giảng viên 012",
-      "time": { "day": 7, "start": 2, "count": 3 },
-      "info": "",
-      "prerequisites": ["FLF1107/FLF1407"],
+      "time": {
+        "day": 7,
+        "start": 1,
+        "count": 3
+      },
+      "info": "Tập trung vào từ vựng và kỹ năng đọc hiểu tài liệu thuộc lĩnh vực KHXH&NV.",
+      "prerequisites": [],
       "stt": 12
     },
     {
       "id": "flh1167",
       "code": "FLH1167",
-      "name": "Ngoại ngữ Khoa học Xã hội và Nhân văn 2 (English for Humanities and Social Sciences 2)",
+      "name": "Tiếng Anh Khoa học Xã hội và Nhân văn 2",
       "credits": 3,
       "lecturer": "Giảng viên 013",
-      "time": { "day": 2, "start": 7, "count": 3 },
-      "info": "",
-      "prerequisites": ["FLH1164"],
+      "time": {
+        "day": 3,
+        "start": 2,
+        "count": 3
+      },
+      "info": "Tiếp nối học phần 1, nâng cao khả năng sử dụng tiếng Anh trong môi trường học thuật và chuyên môn KHXH&NV.",
+      "prerequisites": [
+        "FLH1164"
+      ],
       "stt": 13
     },
     {
@@ -177,99 +237,132 @@ const subjectsData = {
       "name": "Tư duy sáng tạo và tư duy thiết kế",
       "credits": 3,
       "lecturer": "Giảng viên 014",
-      "time": { "day": 3, "start": 1, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 4,
+        "start": 9,
+        "count": 3
+      },
+      "info": "Trang bị phương pháp tư duy để giải quyết vấn đề một cách sáng tạo, quy trình tư duy thiết kế (Design Thinking) để tạo ra các giải pháp đổi mới.",
       "prerequisites": [],
       "stt": 14
     },
     {
-      "id": "inf1151",
-      "code": "INF1151",
-      "name": "Ứng dụng AI trong dạy học và nghiên cứu",
+      "id": "inf1150",
+      "code": "INF1150",
+      "name": "Ứng dụng AI trong học tập và nghề nghiệp",
       "credits": 3,
       "lecturer": "Giảng viên 015",
-      "time": { "day": 5, "start": 11, "count": 2 },
-      "info": "",
+      "time": {
+        "day": 5,
+        "start": 7,
+        "count": 3
+      },
+      "info": "Giới thiệu những kiến thức cơ bản về Trí tuệ nhân tạo (AI) và cách ứng dụng các công cụ AI để tối ưu hóa quá trình học tập (cá nhân hóa, tìm kiếm thông tin) và nâng cao hiệu suất công việc, chuẩn bị cho kỷ nguyên số.",
       "prerequisites": [],
       "stt": 15
     },
     {
-      "id": "mns2101",
-      "code": "MNS2101",
-      "name": "Đổi mới sáng tạo và khởi nghiệp",
+      "id": "mns1161",
+      "code": "MNS1161",
+      "name": "Đổi mới sáng tạo và Khởi nghiệp",
       "credits": 3,
       "lecturer": "Giảng viên 016",
-      "time": { "day": 4, "start": 4, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 2,
+        "start": 2,
+        "count": 3
+      },
+      "info": "Cung cấp kiến thức về quy trình đổi mới (Innovation) và các bước để khởi nghiệp (Entrepreneurship), từ nhận diện cơ hội, xây dựng mô hình kinh doanh, lập kế hoạch, đến huy động vốn và quản lý rủi ro ban đầu.",
       "prerequisites": [],
       "stt": 16
     },
     {
       "id": "his1160",
       "code": "HIS1160",
-      "name": "Văn hoá Việt Nam trong tiến trình hội nhập",
+      "name": "Văn hoá Việt Nam trong kỷ nguyên số",
       "credits": 3,
       "lecturer": "Giảng viên 017",
-      "time": { "day": 6, "start": 5, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 6,
+        "start": 3,
+        "count": 3
+      },
+      "info": "Phân tích các giá trị văn hóa truyền thống của Việt Nam và cách chúng biến đổi, bảo tồn và phát huy trong bối cảnh toàn cầu hóa và kỷ nguyên công nghệ số, bao gồm các vấn đề về giao lưu và hội nhập văn hóa.",
       "prerequisites": [],
       "stt": 17
     },
     {
-      "id": "psy1154",
-      "code": "PSY1154",
-      "name": "Tâm lý học truyền thông",
+      "id": "psy1164",
+      "code": "PSY1164",
+      "name": "Đạo đức nghề nghiệp và liêm chính học thuật",
       "credits": 3,
       "lecturer": "Giảng viên 018",
-      "time": { "day": 7, "start": 6, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 7,
+        "start": 8,
+        "count": 3
+      },
+      "info": "Giúp sinh viên nhận thức và tuân thủ các chuẩn mực đạo đức trong môi trường làm việc chuyên nghiệp (nghề nghiệp) và các nguyên tắc về tính trung thực, liêm chính trong nghiên cứu, học tập (chống đạo văn, gian lận học thuật).",
       "prerequisites": [],
       "stt": 18
     },
-
-    /*  --------  PHẦN CƠ SỞ NGÀNH + NGÀNH + CHUYÊN NGÀNH  -------- */
-
     {
       "id": "ush2001",
       "code": "USH2001",
-      "name": "Nhập môn Khoa học Xã hội",
-      "credits": 3,
+      "name": "Phương pháp và Thiết kế nghiên cứu",
+      "credits": 5,
       "lecturer": "Giảng viên 019",
-      "time": { "day": 2, "start": 2, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 3,
+        "start": 9,
+        "count": 5
+      },
+      "info": "Giới thiệu các phương pháp nghiên cứu khoa học (định tính, định lượng) và cách thiết kế một đề tài nghiên cứu hoàn chỉnh, từ xác định vấn đề, xây dựng khung lý thuyết, chọn mẫu, thu thập, đến phân tích và trình bày dữ liệu.",
       "prerequisites": [],
       "stt": 19
     },
     {
-      "id": "jou2002",
-      "code": "JOU2002",
-      "name": "Nhập môn Báo chí và Truyền thông",
-      "credits": 3,
+      "id": "jou2024",
+      "code": "JOU2024",
+      "name": "Truyền thông trong bối cảnh số",
+      "credits": 4,
       "lecturer": "Giảng viên 020",
-      "time": { "day": 3, "start": 8, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 4,
+        "start": 1,
+        "count": 4
+      },
+      "info": "Nghiên cứu các lý thuyết truyền thông và sự thay đổi trong hoạt động báo chí, truyền thông đại chúng khi chịu tác động của chuyển đổi số, bao gồm truyền thông đa nền tảng, mạng xã hội, và các vấn đề pháp lý/đạo đức.",
       "prerequisites": [],
       "stt": 20
     },
     {
       "id": "mns2008",
       "code": "MNS2008",
-      "name": "Nhập môn Quản lý",
-      "credits": 3,
+      "name": "Khoa học quản lý đại cương",
+      "credits": 4,
       "lecturer": "Giảng viên 021",
-      "time": { "day": 5, "start": 5, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 5,
+        "start": 2,
+        "count": 4
+      },
+      "info": "Cung cấp kiến thức nền tảng về quản lý, bao gồm các chức năng cốt lõi như hoạch định, tổ chức, lãnh đạo và kiểm soát, cùng với các nguyên tắc, mô hình quản lý cơ bản áp dụng trong nhiều loại hình tổ chức.",
       "prerequisites": [],
       "stt": 21
     },
     {
-      "id": "tou2101",
-      "code": "TOU2101",
-      "name": "Nhập môn Quản trị kinh doanh",
-      "credits": 3,
+      "id": "tou2018",
+      "code": "TOU2018",
+      "name": "Đại cương Quản trị kinh doanh",
+      "credits": 4,
       "lecturer": "Giảng viên 022",
-      "time": { "day": 4, "start": 6, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 2,
+        "start": 8,
+        "count": 4
+      },
+      "info": "Giới thiệu tổng quan về hoạt động kinh doanh và các lĩnh vực quản trị chủ chốt trong một doanh nghiệp: quản trị chiến lược, quản trị tài chính, quản trị marketing, quản trị nhân sự, và quản trị sản xuất/vận hành.",
       "prerequisites": [],
       "stt": 22
     },
@@ -279,42 +372,57 @@ const subjectsData = {
       "name": "Lịch sử tư tưởng quản lý",
       "credits": 4,
       "lecturer": "Giảng viên 023",
-      "time": { "day": 6, "start": 2, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 6,
+        "start": 2,
+        "count": 4
+      },
+      "info": "Nghiên cứu sự hình thành và phát triển của các tư tưởng, học thuyết quản lý qua các thời kỳ lịch sử (cổ điển, tân cổ điển, hiện đại), từ Taylor, Fayol đến các lý thuyết quản lý đương đại.",
       "prerequisites": [],
       "stt": 23
     },
-
     {
       "id": "psy2038",
       "code": "PSY2038",
-      "name": "Tâm lý học với đời sống",
+      "name": "Tâm lý học và đời sống",
       "credits": 4,
       "lecturer": "Giảng viên 024",
-      "time": { "day": 7, "start": 8, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 7,
+        "start": 8,
+        "count": 4
+      },
+      "info": "Cung cấp kiến thức về tâm lý học ứng dụng, bao gồm các nguyên lý về hành vi, cảm xúc, nhận thức của con người và cách áp dụng chúng để giải quyết các vấn đề, nâng cao chất lượng cuộc sống cá nhân và xã hội.",
       "prerequisites": [],
       "stt": 24
     },
     {
       "id": "soc2001",
       "code": "SOC2001",
-      "name": "Xã hội học các vấn đề xã hội đương đại",
+      "name": "Xã hội học và các vấn đề xã hội đương đại",
       "credits": 4,
       "lecturer": "Giảng viên 025",
-      "time": { "day": 2, "start": 10, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 2,
+        "start": 1,
+        "count": 4
+      },
+      "info": "Nghiên cứu về cấu trúc xã hội, các thiết chế xã hội, và phân tích các vấn đề xã hội đang nổi cộm hiện nay (như bất bình đẳng, tội phạm, môi trường, di cư), dựa trên các lý thuyết và phương pháp của xã hội học.",
       "prerequisites": [],
       "stt": 25
     },
     {
-      "id": "phi2005",
-      "code": "PHI2005",
-      "name": "Lôgic học và tư duy phản biện",
+      "id": "phi2025",
+      "code": "PHI2025",
+      "name": "Logic học và nghệ thuật phản biện",
       "credits": 4,
       "lecturer": "Giảng viên 026",
-      "time": { "day": 3, "start": 3, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 3,
+        "start": 3,
+        "count": 4
+      },
+      "info": "Trang bị kiến thức về Logic học hình thức (cấu trúc tư duy, quy luật suy luận) và rèn luyện kỹ năng tư duy phản biện (Critical Thinking): phân tích, đánh giá tính hợp lý của lập luận và xây dựng bài phản bác có căn cứ.",
       "prerequisites": [],
       "stt": 26
     },
@@ -324,852 +432,856 @@ const subjectsData = {
       "name": "Văn minh thế giới và sự tiến hoá nhân loại",
       "credits": 4,
       "lecturer": "Giảng viên 027",
-      "time": { "day": 5, "start": 9, "count": 3 },
-      "info": "",
+      "time": {
+        "day": 5,
+        "start": 9,
+        "count": 4
+      },
+      "info": "Nghiên cứu lịch sử phát triển của các nền văn minh lớn trên thế giới, quá trình tiến hóa của loài người, và các yếu tố vật chất, tinh thần hình thành nên bản sắc của mỗi nền văn minh.",
       "prerequisites": [],
       "stt": 27
     },
     {
-        "id": "mns2056",
-        "code": "MNS2056",
-        "name": "Khoa học chính sách (Policy Science)",
-        "credits": 4,
-        "lecturer": "Giảng viên 028",
-        "time": {
-            "day": 7,
-            "start": 2,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 28
+      "id": "mns2056",
+      "code": "MNS2056",
+      "name": "Khoa học chính sách",
+      "credits": 4,
+      "lecturer": "Giảng viên 028",
+      "time": {
+        "day": 7,
+        "start": 2,
+        "count": 4
+      },
+      "info": "Nghiên cứu về quy trình hoạch định, thực thi và đánh giá chính sách công/xã hội. Nội dung tập trung vào vai trò của nhà nước, các tác nhân chính sách, và các công cụ để phân tích, đưa ra quyết định chính sách hiệu quả.",
+      "prerequisites": [],
+      "stt": 28
     },
     {
-        "id": "mns3129",
-        "code": "MNS3129",
-        "name": "Quản lý khoa học, công nghệ và đổi mới sáng tạo (Science, Technology and Innovation Management)",
-        "credits": 4,
-        "lecturer": "Giảng viên 029",
-        "time": {
-            "day": 3,
-            "start": 2,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 29
+      "id": "mns3129",
+      "code": "MNS3129",
+      "name": "Quản lý khoa học, công nghệ và đổi mới sáng tạo",
+      "credits": 4,
+      "lecturer": "Giảng viên 029",
+      "time": {
+        "day": 3,
+        "start": 2,
+        "count": 4
+      },
+      "info": "Trang bị những kiến thức chuyên môn thuộc lĩnh vực khoa học quản lí chuyên ngành Quản lí Khoa học và Công nghệ dưới dạng các chuyên đề như: Phân tích, hoạch định chính sách KH&CN, đánh giá nghiên cứu khoa học, đánh giá công nghệ...",
+      "prerequisites": [],
+      "stt": 29
     },
     {
-        "id": "mns3130",
-        "code": "MNS3130",
-        "name": "Quản lý tài sản trí tuệ (Intellectual Property Management)",
-        "credits": 4,
-        "lecturer": "Giảng viên 030",
-        "time": {
-            "day": 3,
-            "start": 1,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 30
+      "id": "mns3130",
+      "code": "MNS3130",
+      "name": "Quản lý tài sản trí tuệ",
+      "credits": 4,
+      "lecturer": "Giảng viên 030",
+      "time": {
+        "day": 3,
+        "start": 1,
+        "count": 4
+      },
+      "info": "Cung cấp cho người học những kiến thức cơ bản về tài sản trí tuệ, quyền sở hữu trí tuệ; các đối tượng của quyền sở hữu trí tuệ; các nguyên tắc bảo hộ quyền sở hữu trí tuệ; cách thức khai thác và thương mại hoá các tài sản trí tuệ...",
+      "prerequisites": [],
+      "stt": 30
     },
     {
-        "id": "mns3131",
-        "code": "MNS3131",
-        "name": "Quản lý nguồn nhân lực (Human Resource Management)",
-        "credits": 4,
-        "lecturer": "Giảng viên 031",
-        "time": {
-            "day": 4,
-            "start": 9,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 31
+      "id": "mns3131",
+      "code": "MNS3131",
+      "name": "Quản lý nguồn nhân lực",
+      "credits": 4,
+      "lecturer": "Giảng viên 031",
+      "time": {
+        "day": 4,
+        "start": 9,
+        "count": 4
+      },
+      "info": "Cung cấp cho sinh viên những kiến thức cơ bản về quản lí nguồn nhân lực trong doanh nghiệp. Từ khái niệm, chức năng, tầm quan trọng đến các hoạt động của quản lí nguồn nhân lực...",
+      "prerequisites": [],
+      "stt": 31
     },
     {
-        "id": "mns3132",
-        "code": "MNS3132",
-        "name": "Văn hoá tổ chức (Organizational Culture)",
-        "credits": 4,
-        "lecturer": "Giảng viên 032",
-        "time": {
-            "day": 4,
-            "start": 1,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 32
+      "id": "mns3132",
+      "code": "MNS3132",
+      "name": "Văn hoá tổ chức",
+      "credits": 4,
+      "lecturer": "Giảng viên 032",
+      "time": {
+        "day": 4,
+        "start": 1,
+        "count": 4
+      },
+      "info": "Trang bị cho người học những vấn đề cơ bản về văn hoá tổ chức như: khái quát chung về văn hóa tổ chức, khái niệm, đặc trưng, chức năng, cấu trúc, các loại hình văn hóa tổ chức; Lý luận về xây dựng văn hóa tổ chức...",
+      "prerequisites": [],
+      "stt": 32
     },
     {
-        "id": "mns3133",
-        "code": "MNS3133",
-        "name": "Kinh tế học quản lý (Managerial Economics)",
-        "credits": 4,
-        "lecturer": "Giảng viên 033",
-        "time": {
-            "day": 5,
-            "start": 9,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 33
+      "id": "mns3133",
+      "code": "MNS3133",
+      "name": "Kinh tế học quản lý",
+      "credits": 4,
+      "lecturer": "Giảng viên 033",
+      "time": {
+        "day": 5,
+        "start": 9,
+        "count": 4
+      },
+      "info": "Về cơ bản bao gồm hai phần chính là kinh tế học vi mô và kinh tế học vĩ mô. Kinh tế học vi mô liên quan đến cung cầu giữa các cá nhân... Kinh tế học vĩ mô liên quan đến môi trường kinh tế tổng thể.",
+      "prerequisites": [],
+      "stt": 33
     },
     {
-        "id": "mns3134",
-        "code": "MNS3134",
-        "name": "Quản trị tổ chức (Organizational Management)",
-        "credits": 4,
-        "lecturer": "Giảng viên 034",
-        "time": {
-            "day": 7,
-            "start": 8,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 34
+      "id": "mns3134",
+      "code": "MNS3134",
+      "name": "Quản trị tổ chức",
+      "credits": 4,
+      "lecturer": "Giảng viên 034",
+      "time": {
+        "day": 7,
+        "start": 8,
+        "count": 4
+      },
+      "info": "Cung cấp cho học viên những kiến thức cơ bản về kinh doanh và quản trị. Môn học tập trung vào các lý thuyết nền tảng của hoạt động quản trị, phân tích môi trường kinh doanh, ra quyết định, hoạch định và quản trị chiến lược...",
+      "prerequisites": [],
+      "stt": 34
     },
     {
-        "id": "mns3135",
-        "code": "MNS3135",
-        "name": "Lý thuyết hệ thống và thông tin quản lý (Systems Theory and Management Information)",
-        "credits": 4,
-        "lecturer": "Giảng viên 035",
-        "time": {
-            "day": 5,
-            "start": 7,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 35
+      "id": "mns3135",
+      "code": "MNS3135",
+      "name": "Lý thuyết hệ thống và thông tin quản lý",
+      "credits": 4,
+      "lecturer": "Giảng viên 035",
+      "time": {
+        "day": 5,
+        "start": 7,
+        "count": 4
+      },
+      "info": "Trang bị các kiến thức về vai trò của hệ thống thông tin trong tổ chức, các thành phần cơ bản của một hệ thống, và cách quản lý chúng để hỗ trợ hoạt động kinh doanh.",
+      "prerequisites": [],
+      "stt": 35
     },
     {
-        "id": "mns3136",
-        "code": "MNS3136",
-        "name": "Quản trị hiệu suất (Performance Management)",
-        "credits": 4,
-        "lecturer": "Giảng viên 036",
-        "time": {
-            "day": 4,
-            "start": 1,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 36
+      "id": "mns3136",
+      "code": "MNS3136",
+      "name": "Quản trị hiệu suất",
+      "credits": 4,
+      "lecturer": "Giảng viên 036",
+      "time": {
+        "day": 4,
+        "start": 1,
+        "count": 4
+      },
+      "info": "Bao gồm các kiến thức và kỹ năng về quy trình quản lý hiệu suất liên tục, như: thiết lập mục tiêu (SMART), xây dựng hệ thống đánh giá, theo dõi và phản hồi liên tục, phát triển năng lực nhân viên...",
+      "prerequisites": [],
+      "stt": 36
     },
     {
-        "id": "mns3137",
-        "code": "MNS3137",
-        "name": "Chuyển đổi số trong quản lý (Digital Transformation in Management)",
-        "credits": 4,
-        "lecturer": "Giảng viên 037",
-        "time": {
-            "day": 7,
-            "start": 8,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 37
+      "id": "mns3137",
+      "code": "MNS3137",
+      "name": "Chuyển đổi số trong quản lý",
+      "credits": 4,
+      "lecturer": "Giảng viên 037",
+      "time": {
+        "day": 7,
+        "start": 8,
+        "count": 4
+      },
+      "info": "Bao gồm việc áp dụng công nghệ số vào các hoạt động kinh doanh và quản trị, thay đổi mô hình ra quyết định dựa trên dữ liệu, tự động hóa các quy trình thủ công, và tập trung vào việc nâng cao trải nghiệm khách hàng...",
+      "prerequisites": [],
+      "stt": 37
     },
     {
-        "id": "mns3057",
-        "code": "MNS3057",
-        "name": "Chính sách văn hóa (Cultural Policy)",
-        "credits": 3,
-        "lecturer": "Giảng viên 038",
-        "time": {
-            "day": 3,
-            "start": 3,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 38
+      "id": "mns3057",
+      "code": "MNS3057",
+      "name": "Chính sách văn hóa",
+      "credits": 3,
+      "lecturer": "Giảng viên 038",
+      "time": {
+        "day": 3,
+        "start": 3,
+        "count": 3
+      },
+      "info": "Cung cấp kiến thức nền tảng về khái niệm chính sách công và chính sách văn hoá, vai trò của văn hoá trong phát triển xã hội; trình bày cơ sở lý luận và pháp lý của các chính sách văn hoá ở Việt Nam...",
+      "prerequisites": [],
+      "stt": 38
     },
     {
-        "id": "mns3061",
-        "code": "MNS3061",
-        "name": "Chính sách giáo dục và đào tạo (Education and Training Policy)",
-        "credits": 3,
-        "lecturer": "Giảng viên 039",
-        "time": {
-            "day": 5,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 39
+      "id": "mns3061",
+      "code": "MNS3061",
+      "name": "Chính sách giáo dục và đào tạo",
+      "credits": 3,
+      "lecturer": "Giảng viên 039",
+      "time": {
+        "day": 5,
+        "start": 7,
+        "count": 3
+      },
+      "info": "Cung cấp kiến thức về khái niệm và đặc điểm của chính sách công trong lĩnh vực giáo dục; cơ sở lý luận, pháp lý và các chủ trương của Đảng và Nhà nước về giáo dục và đào tạo...",
+      "prerequisites": [],
+      "stt": 39
     },
     {
-        "id": "mns3083",
-        "code": "MNS3083",
-        "name": "Chính sách giảm nghèo bền vững (Sustainable Poverty Reduction Policy)",
-        "credits": 3,
-        "lecturer": "Giảng viên 040",
-        "time": {
-            "day": 6,
-            "start": 3,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 40
+      "id": "mns3083",
+      "code": "MNS3083",
+      "name": "Chính sách giảm nghèo bền vững",
+      "credits": 3,
+      "lecturer": "Giảng viên 040",
+      "time": {
+        "day": 6,
+        "start": 3,
+        "count": 3
+      },
+      "info": "Tập trung vào việc trang bị kiến thức về khái niệm nghèo đa chiều, phát triển bền vững và các tiếp cận giảm nghèo hiện đại; phân tích cơ sở lý luận, pháp lý và hệ thống chính sách giảm nghèo của Việt Nam...",
+      "prerequisites": [],
+      "stt": 40
     },
     {
-        "id": "mns3106",
-        "code": "MNS3106",
-        "name": "Chính sách trợ giúp xã hội (Social Assistance Policy)",
-        "credits": 3,
-        "lecturer": "Giảng viên 041",
-        "time": {
-            "day": 6,
-            "start": 2,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 41
+      "id": "mns3106",
+      "code": "MNS3106",
+      "name": "Chính sách trợ giúp xã hội",
+      "credits": 3,
+      "lecturer": "Giảng viên 041",
+      "time": {
+        "day": 6,
+        "start": 2,
+        "count": 3
+      },
+      "info": "Tập trung vào cơ chế bảo vệ và hỗ trợ của Nhà nước đối với các nhóm yếu thế và dễ bị tổn thương nhằm đảm bảo An sinh Xã hội tối thiểu. Nội dung chính nghiên cứu khái niệm, mục tiêu và vai trò của Trợ giúp Xã hội...",
+      "prerequisites": [],
+      "stt": 41
     },
     {
-        "id": "mns3067",
-        "code": "MNS3067",
-        "name": "Phân cấp quản lý hành chính (Administrative Decentralization)",
-        "credits": 3,
-        "lecturer": "Giảng viên 042",
-        "time": {
-            "day": 3,
-            "start": 3,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 42
+      "id": "mns3067",
+      "code": "MNS3067",
+      "name": "Phân cấp quản lý hành chính",
+      "credits": 3,
+      "lecturer": "Giảng viên 042",
+      "time": {
+        "day": 3,
+        "start": 3,
+        "count": 3
+      },
+      "info": "-Môn học này cung cấp kiến thức về các mô hình phân cấp, ủy quyền trong quản trị hành chính công và cả trong các tổ chức lớn. Bạn sẽ tìm hiểu cách phân chia quyền hạn, trách nhiệm từ cấp trung ương xuống địa phương...",
+      "prerequisites": [],
+      "stt": 42
     },
     {
-        "id": "mns3066",
-        "code": "MNS3066",
-        "name": "Quản lý cấp cơ sở về kinh tế (Grassroots Economic Management)",
-        "credits": 3,
-        "lecturer": "Giảng viên 043",
-        "time": {
-            "day": 3,
-            "start": 2,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 43
+      "id": "mns3066",
+      "code": "MNS3066",
+      "name": "Quản lý cấp cơ sở về kinh tế",
+      "credits": 3,
+      "lecturer": "Giảng viên 043",
+      "time": {
+        "day": 3,
+        "start": 2,
+        "count": 3
+      },
+      "info": "-Môn học này tập trung vào các công cụ, chính sách và thực tiễn quản lý hoạt động kinh tế tại cấp cơ sở (như phường, xã, tổ dân phố) hoặc các đơn vị trực thuộc trong doanh nghiệp.",
+      "prerequisites": [],
+      "stt": 43
     },
     {
-        "id": "mns3110",
-        "code": "MNS3110",
-        "name": "Quản lý cấp cơ sở về văn hoá và xã hội (Grassroots Cultural and Social Management)",
-        "credits": 3,
-        "lecturer": "Giảng viên 044",
-        "time": {
-            "day": 5,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 44
+      "id": "mns3110",
+      "code": "MNS3110",
+      "name": "Quản lý cấp cơ sở về văn hóa và xã hội",
+      "credits": 3,
+      "lecturer": "Giảng viên 044",
+      "time": {
+        "day": 5,
+        "start": 7,
+        "count": 3
+      },
+      "info": "Trang bị cho sinh viên kỹ năng thực hành để quản lý hiệu quả các vấn đề văn hóa và xã hội tại cấp địa phương. Trọng tâm của học phần là nghiên cứu lý luận quản lý kết hợp với thực tiễn cộng đồng...",
+      "prerequisites": [],
+      "stt": 44
     },
     {
-        "id": "mns3062",
-        "code": "MNS3062",
-        "name": "Pháp luật về lao động và việc làm (Labor and Employment Law)",
-        "credits": 3,
-        "lecturer": "Giảng viên 045",
-        "time": {
-            "day": 7,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 45
+      "id": "mns3062",
+      "code": "MNS3062",
+      "name": "Pháp luật về lao động và việc làm",
+      "credits": 3,
+      "lecturer": "Giảng viên 045",
+      "time": {
+        "day": 7,
+        "start": 7,
+        "count": 3
+      },
+      "info": "Môn học cung cấp kiến thức pháp lý nền tảng về quan hệ lao động. Sinh viên sẽ được tìm hiểu về Bộ Luật Lao động Việt Nam và các văn bản hướng dẫn thi hành...",
+      "prerequisites": [],
+      "stt": 45
     },
     {
-        "id": "mns3063",
-        "code": "MNS3063",
-        "name": "Bảo hiểm xã hội (Social Insurance)",
-        "credits": 3,
-        "lecturer": "Giảng viên 046",
-        "time": {
-            "day": 2,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 46
+      "id": "mns3063",
+      "code": "MNS3063",
+      "name": "Bảo hiểm xã hội",
+      "credits": 3,
+      "lecturer": "Giảng viên 046",
+      "time": {
+        "day": 2,
+        "start": 7,
+        "count": 3
+      },
+      "info": "- Môn học chuyên sâu về các chế độ bảo hiểm xã hội (ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp, hưu trí, tử tuất), bảo hiểm thất nghiệp, và trách nhiệm của người sử dụng lao động...",
+      "prerequisites": [],
+      "stt": 46
     },
     {
-        "id": "mns3111",
-        "code": "MNS3111",
-        "name": "Định mức lao động (Labor Standards)",
-        "credits": 3,
-        "lecturer": "Giảng viên 047",
-        "time": {
-            "day": 7,
-            "start": 1,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 47
+      "id": "mns3111",
+      "code": "MNS3111",
+      "name": "Định mức lao động",
+      "credits": 3,
+      "lecturer": "Giảng viên 047",
+      "time": {
+        "day": 7,
+        "start": 1,
+        "count": 3
+      },
+      "info": "- Môn học về các phương pháp đo lường và xác định khối lượng công việc cần thiết để hoàn thành một sản phẩm/dịch vụ trong một khoảng thời gian nhất định. Nó liên quan đến việc xây dựng định mức năng suất...",
+      "prerequisites": [],
+      "stt": 47
     },
     {
-        "id": "mns3065",
-        "code": "MNS3065",
-        "name": "Tuyển dụng nhân lực (Human Resource Recruitment)",
-        "credits": 3,
-        "lecturer": "Giảng viên 048",
-        "time": {
-            "day": 5,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 48
+      "id": "mns3065",
+      "code": "MNS3065",
+      "name": "Tuyển dụng nhân lực",
+      "credits": 3,
+      "lecturer": "Giảng viên 048",
+      "time": {
+        "day": 5,
+        "start": 7,
+        "count": 3
+      },
+      "info": "- Môn học tập trung vào quy trình và kỹ thuật tuyển dụng nhân sự hiệu quả. Nội dung bao gồm các bước: xác định nhu cầu tuyển dụng, phân tích công việc, lập kế hoạch tuyển dụng...",
+      "prerequisites": [],
+      "stt": 48
     },
     {
-        "id": "mns3103",
-        "code": "MNS3103",
-        "name": "Tổ chức lao động khoa học (Scientific Labor Organization)",
-        "credits": 3,
-        "lecturer": "Giảng viên 049",
-        "time": {
-            "day": 2,
-            "start": 3,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 49
+      "id": "mns3103",
+      "code": "MNS3103",
+      "name": "Tổ chức lao động khoa học",
+      "credits": 3,
+      "lecturer": "Giảng viên 049",
+      "time": {
+        "day": 2,
+        "start": 3,
+        "count": 3
+      },
+      "info": "- Nghiên cứu cách thiết kế và sắp xếp công việc, phân công lao động, bố trí nơi làm việc một cách khoa học để tối đa hóa năng suất, giảm mệt mỏi và tạo môi trường làm việc hiệu quả, an toàn.",
+      "prerequisites": [],
+      "stt": 49
     },
     {
-        "id": "mns3112",
-        "code": "MNS3112",
-        "name": "Đào tạo và phát triển nguồn nhân lực (Human Resource Training and Development)",
-        "credits": 3,
-        "lecturer": "Giảng viên 050",
-        "time": {
-            "day": 6,
-            "start": 9,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 50
+      "id": "mns3112",
+      "code": "MNS3112",
+      "name": "Đào tạo phát triển nguồn nhân lực",
+      "credits": 3,
+      "lecturer": "Giảng viên 050",
+      "time": {
+        "day": 6,
+        "start": 9,
+        "count": 3
+      },
+      "info": "Môn học cung cấp kiến thức về quy trình đào tạo và phát triển nhân sự trong một tổ chức. Sinh viên sẽ học cách xác định nhu cầu đào tạo, lập kế hoạch, thiết kế chương trình...",
+      "prerequisites": [],
+      "stt": 50
     },
     {
-        "id": "mns3138",
-        "code": "MNS3138",
-        "name": "Đãi ngộ toàn diện (Total Rewards)",
-        "credits": 3,
-        "lecturer": "Giảng viên 051",
-        "time": {
-            "day": 5,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 51
+      "id": "mns3138",
+      "code": "MNS3138",
+      "name": "Đãi ngộ toàn diện",
+      "credits": 3,
+      "lecturer": "Giảng viên 051",
+      "time": {
+        "day": 5,
+        "start": 7,
+        "count": 3
+      },
+      "info": "Môn học nghiên cứu về hệ thống đãi ngộ toàn diện, không chỉ là tiền lương. Nội dung bao gồm các thành phần: đãi ngộ tài chính trực tiếp (lương, thưởng), đãi ngộ tài chính gián tiếp (phúc lợi)...",
+      "prerequisites": [],
+      "stt": 51
     },
     {
-        "id": "mns3071",
-        "code": "MNS3071",
-        "name": "Quyền tác giả và quyền liên quan (Copyright and Related Rights)",
-        "credits": 3,
-        "lecturer": "Giảng viên 052",
-        "time": {
-            "day": 7,
-            "start": 1,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 52
+      "id": "mns3071",
+      "code": "MNS3071",
+      "name": "Quyền tác giả và quyền liên quan",
+      "credits": 3,
+      "lecturer": "Giảng viên 052",
+      "time": {
+        "day": 7,
+        "start": 1,
+        "count": 3
+      },
+      "info": "- Nghiên cứu về quyền tác giả đối với các tác phẩm văn học, nghệ thuật, khoa học (sách, nhạc, phim, phần mềm...). Đồng thời, tìm hiểu về quyền của những người biểu diễn, nhà sản xuất bản ghi âm...",
+      "prerequisites": [],
+      "stt": 52
     },
     {
-        "id": "mns3072",
-        "code": "MNS3072",
-        "name": "Sáng chế và giải pháp hữu ích (Patents and Utility Solutions)",
-        "credits": 3,
-        "lecturer": "Giảng viên 053",
-        "time": {
-            "day": 7,
-            "start": 2,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 53
+      "id": "mns3072",
+      "code": "MNS3072",
+      "name": "Sáng chế và giải pháp hữu ích",
+      "credits": 3,
+      "lecturer": "Giảng viên 053",
+      "time": {
+        "day": 7,
+        "start": 2,
+        "count": 3
+      },
+      "info": "- Đi sâu vào việc bảo hộ các giải pháp kỹ thuật dưới dạng sản phẩm hoặc quy trình. -Môn học làm rõ sự khác biệt giữa bằng độc quyền sáng chế và bằng độc quyền giải pháp hữu ích.",
+      "prerequisites": [],
+      "stt": 53
     },
     {
-        "id": "mns3073",
-        "code": "MNS3073",
-        "name": "Kiểu dáng công nghiệp (Industrial Design)",
-        "credits": 3,
-        "lecturer": "Giảng viên 054",
-        "time": {
-            "day": 3,
-            "start": 9,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 54
+      "id": "mns3073",
+      "code": "MNS3073",
+      "name": "Kiểu dáng công nghiệp",
+      "credits": 3,
+      "lecturer": "Giảng viên 054",
+      "time": {
+        "day": 3,
+        "start": 9,
+        "count": 3
+      },
+      "info": "-Tập trung vào việc bảo hộ hình dáng bên ngoài của sản phẩm. Đó là những đường nét, hình khối, màu sắc, hoặc sự kết hợp các yếu tố đó tạo nên vẻ đẹp thẩm mỹ và tính mới của sản phẩm...",
+      "prerequisites": [],
+      "stt": 54
     },
     {
-        "id": "mns3074",
-        "code": "MNS3074",
-        "name": "Nhãn hiệu và các chỉ dẫn thương mại khác (Trademarks and Other Commercial Indications)",
-        "credits": 3,
-        "lecturer": "Giảng viên 055",
-        "time": {
-            "day": 5,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 55
+      "id": "mns3074",
+      "code": "MNS3074",
+      "name": "Nhãn hiệu và chỉ dẫn thương mại khác",
+      "credits": 3,
+      "lecturer": "Giảng viên 055",
+      "time": {
+        "day": 5,
+        "start": 7,
+        "count": 3
+      },
+      "info": "-Môn học về việc bảo hộ các dấu hiệu dùng để phân biệt hàng hóa, dịch vụ (tên thương hiệu, logo, khẩu hiệu, biểu tượng...). Cũng tìm hiểu về các chỉ dẫn thương mại khác như chỉ dẫn địa lý...",
+      "prerequisites": [],
+      "stt": 55
     },
     {
-        "id": "mns3075",
-        "code": "MNS3075",
-        "name": "Quản lý sở hữu trí tuệ trong doanh nghiệp (Intellectual Property Management in Enterprises)",
-        "credits": 3,
-        "lecturer": "Giảng viên 056",
-        "time": {
-            "day": 3,
-            "start": 2,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 56
+      "id": "mns3075",
+      "code": "MNS3075",
+      "name": "Quản lý sở hữu trí tuệ trong doanh nghiệp",
+      "credits": 3,
+      "lecturer": "Giảng viên 056",
+      "time": {
+        "day": 3,
+        "start": 2,
+        "count": 3
+      },
+      "info": "-Đây là môn học tổng hợp và ứng dựng. Nó kết tất cả các loại hình SHTT ở trên vào hoạt động thực tế của doanh nghiệp. Bạn sẽ học cách xây dựng chiến lược SHTT, lập hồ sơ đăng ký...",
+      "prerequisites": [],
+      "stt": 56
     },
     {
-        "id": "mns3114",
-        "code": "MNS3114",
-        "name": "Thương mại hóa quyền sở hữu trí tuệ (Commercialization of Intellectual Property Rights)",
-        "credits": 3,
-        "lecturer": "Giảng viên 057",
-        "time": {
-            "day": 2,
-            "start": 8,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 57
+      "id": "mns3114",
+      "code": "MNS3114",
+      "name": "Thương mại hoá quyền sở hữu trí tuệ",
+      "credits": 3,
+      "lecturer": "Giảng viên 057",
+      "time": {
+        "day": 2,
+        "start": 8,
+        "count": 3
+      },
+      "info": "Môn Thương mại hoá quyền sở hữu trí tuệ học về cách biến tài sản trí tuệ (sáng chế, thương hiệu, bản quyền…) thành giá trị kinh tế. Nội dung gồm hiểu các loại quyền SHTT, cách đánh giá và định giá tài sản trí tuệ...",
+      "prerequisites": [],
+      "stt": 57
     },
     {
-        "id": "mns3115",
-        "code": "MNS3115",
-        "name": "Thực thi quyền sở hữu trí tuệ (Enforcement of Intellectual Property Rights)",
-        "credits": 3,
-        "lecturer": "Giảng viên 058",
-        "time": {
-            "day": 7,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 58
+      "id": "mns3115",
+      "code": "MNS3115",
+      "name": "Thực thi quyền sở hữu trí tuệ",
+      "credits": 3,
+      "lecturer": "Giảng viên 058",
+      "time": {
+        "day": 7,
+        "start": 7,
+        "count": 3
+      },
+      "info": "Học về cách bảo vệ và thực thi quyền sở hữu trí tuệ khi xảy ra vi phạm. Nội dung bao gồm các biện pháp hành chính, dân sự và hình sự để xử lý xâm phạm quyền SHTT.",
+      "prerequisites": [],
+      "stt": 58
     },
     {
-        "id": "mns3139",
-        "code": "MNS3139",
-        "name": "Pháp luật về khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số (Law on Science, Technology, Innovation and Digital Transformation)",
-        "credits": 3,
-        "lecturer": "Giảng viên 059",
-        "time": {
-            "day": 7,
-            "start": 1,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 59
+      "id": "mns3139",
+      "code": "MNS3139",
+      "name": "Pháp luật về khoa học, công nghệ và chuyển đổi số",
+      "credits": 3,
+      "lecturer": "Giảng viên 059",
+      "time": {
+        "day": 7,
+        "start": 1,
+        "count": 3
+      },
+      "info": "cung cấp kiến thức về khung pháp lý điều chỉnh hoạt động khoa học – công nghệ và đổi mới sáng tạo ở Việt Nam. Nội dung gồm pháp luật về quản lý nghiên cứu khoa học, phát triển công nghệ...",
+      "prerequisites": [],
+      "stt": 59
     },
     {
-        "id": "mns3140",
-        "code": "MNS3140",
-        "name": "Khoa học, công nghệ và chuyển đổi số với phát triển bền vững (Science, Technology and Digital Transformation for Sustainable Development)",
-        "credits": 3,
-        "lecturer": "Giảng viên 060",
-        "time": {
-            "day": 2,
-            "start": 8,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 60
+      "id": "mns3140",
+      "code": "MNS3140",
+      "name": "Khoa học, công nghệ và chuyển đổi số với phát triển bền vững",
+      "credits": 3,
+      "lecturer": "Giảng viên 060",
+      "time": {
+        "day": 2,
+        "start": 8,
+        "count": 3
+      },
+      "info": ". Nội dung bao gồm xu hướng chuyển đổi số, công nghệ số (AI, dữ liệu lớn, IoT…) và tác động của chúng đến các lĩnh vực như giáo dục, y tế, môi trường và quản trị.",
+      "prerequisites": [],
+      "stt": 60
     },
     {
-        "id": "mns3098",
-        "code": "MNS3098",
-        "name": "Chính sách khoa học, công nghệ và đổi mới (Science, Technology and Innovation Policy)",
-        "credits": 3,
-        "lecturer": "Giảng viên 061",
-        "time": {
-            "day": 6,
-            "start": 3,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 61
+      "id": "mns3098",
+      "code": "MNS3098",
+      "name": "Chính sách khoa học, công nghệ và đổi mới",
+      "credits": 3,
+      "lecturer": "Giảng viên 061",
+      "time": {
+        "day": 6,
+        "start": 3,
+        "count": 3
+      },
+      "info": "cách nhà nước xây dựng và triển khai chính sách để thúc đẩy khoa học, công nghệ và đổi mới sáng tạo. Nội dung gồm các công cụ chính sách như đầu tư công cho R&D, ưu đãi thuế...",
+      "prerequisites": [],
+      "stt": 61
     },
     {
-        "id": "mns3079",
-        "code": "MNS3079",
-        "name": "Hệ thống đổi mới quốc gia (National Innovation System)",
-        "credits": 3,
-        "lecturer": "Giảng viên 062",
-        "time": {
-            "day": 7,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 62
+      "id": "mns3079",
+      "code": "MNS3079",
+      "name": "Hệ thống đổi mới quốc gia",
+      "credits": 3,
+      "lecturer": "Giảng viên 062",
+      "time": {
+        "day": 7,
+        "start": 7,
+        "count": 3
+      },
+      "info": "nghiên cứu cách các thành phần trong một quốc gia (nhà nước, doanh nghiệp, trường đại học, viện nghiên cứu) phối hợp để thúc đẩy đổi mới sáng tạo. Nội dung tập trung vào cấu trúc, chức năng và mối quan hệ...",
+      "prerequisites": [],
+      "stt": 62
     },
     {
-        "id": "mns3080",
-        "code": "MNS3080",
-        "name": "Doanh nghiệp khoa học và công nghệ (Science and Technology Enterprises)",
-        "credits": 3,
-        "lecturer": "Giảng viên 063",
-        "time": {
-            "day": 6,
-            "start": 9,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 63
+      "id": "mns3080",
+      "code": "MNS3080",
+      "name": "Doanh nghiệp khoa học và công nghệ",
+      "credits": 3,
+      "lecturer": "Giảng viên 063",
+      "time": {
+        "day": 6,
+        "start": 9,
+        "count": 3
+      },
+      "info": "nghiên cứu cách doanh nghiệp khai thác khoa học và công nghệ để tạo giá trị kinh tế. Nội dung gồm các loại hình doanh nghiệp công nghệ cao, cơ chế thành lập, vận hành và quản lý doanh nghiệp KH&CN.",
+      "prerequisites": [],
+      "stt": 63
     },
     {
-        "id": "mns3141",
-        "code": "MNS3141",
-        "name": "Huy động và phát triển các nguồn lực khoa học, công nghệ và đổi mới sáng tạo (Mobilizing and Developing Science, Technology and Innovation Resources)",
-        "credits": 3,
-        "lecturer": "Giảng viên 064",
-        "time": {
-            "day": 3,
-            "start": 9,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 64
+      "id": "mns3141",
+      "code": "MNS3141",
+      "name": "Huy động và phát triển nguồn lực KH, CN và ĐMST",
+      "credits": 3,
+      "lecturer": "Giảng viên 064",
+      "time": {
+        "day": 3,
+        "start": 9,
+        "count": 3
+      },
+      "info": "cách huy động và sử dụng hiệu quả các nguồn lực để thúc đẩy khoa học, công nghệ và đổi mới sáng tạo (KH&CN&ĐMST). Nội dung gồm nguồn lực con người... nguồn lực tài chính... và nguồn lực vật chất...",
+      "prerequisites": [],
+      "stt": 64
     },
     {
-        "id": "mns3142",
-        "code": "MNS3142",
-        "name": "Thiết kế và phát triển dự án khoa học, công nghệ và đổi mới sáng tạo (Design and Development of Science, Technology and Innovation Projects)",
-        "credits": 3,
-        "lecturer": "Giảng viên 065",
-        "time": {
-            "day": 2,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 65
+      "id": "mns3142",
+      "code": "MNS3142",
+      "name": "Thiết kế và phát triển dự án KH, CN và ĐMST",
+      "credits": 3,
+      "lecturer": "Giảng viên 065",
+      "time": {
+        "day": 2,
+        "start": 7,
+        "count": 3
+      },
+      "info": "cách lập kế hoạch, thiết kế và triển khai dự án KH&CN và đổi mới sáng tạo. Nội dung gồm xác định ý tưởng, mục tiêu, phạm vi và nguồn lực dự án, đồng thời đánh giá tính khả thi về kỹ thuật, tài chính và thị trường.",
+      "prerequisites": [],
+      "stt": 65
     },
     {
-        "id": "mns3099",
-        "code": "MNS3099",
-        "name": "Văn hóa khởi nghiệp (Startup Culture)",
-        "credits": 3,
-        "lecturer": "Giảng viên 066",
-        "time": {
-            "day": 7,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 66
+      "id": "mns3099",
+      "code": "MNS3099",
+      "name": "Văn hoá khởi nghiệp",
+      "credits": 3,
+      "lecturer": "Giảng viên 066",
+      "time": {
+        "day": 7,
+        "start": 7,
+        "count": 3
+      },
+      "info": "tư duy, thái độ và hành vi đặc trưng của môi trường khởi nghiệp. Nội dung bao gồm tinh thần đổi mới, sáng tạo, chấp nhận rủi ro và khả năng thích nghi trong quá trình xây dựng doanh nghiệp.",
+      "prerequisites": [],
+      "stt": 66
     },
     {
-        "id": "mns3100",
-        "code": "MNS3100",
-        "name": "Đạo đức kinh doanh (Business Ethics)",
-        "credits": 3,
-        "lecturer": "Giảng viên 067",
-        "time": {
-            "day": 2,
-            "start": 9,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 67
+      "id": "mns3100",
+      "code": "MNS3100",
+      "name": "Đạo đức kinh doanh",
+      "credits": 3,
+      "lecturer": "Giảng viên 067",
+      "time": {
+        "day": 2,
+        "start": 9,
+        "count": 3
+      },
+      "info": "nguyên tắc đạo đức trong hoạt động kinh doanh và quản trị doanh nghiệp. Nội dung gồm trách nhiệm với khách hàng, nhân viên, đối tác và xã hội, đồng thời xem xét các vấn đề đạo đức trong marketing, tài chính...",
+      "prerequisites": [],
+      "stt": 67
     },
     {
-        "id": "mns3118",
-        "code": "MNS3118",
-        "name": "Đánh giá và phát triển văn hóa quản lý (Evaluation and Development of Management Culture)",
-        "credits": 3,
-        "lecturer": "Giảng viên 068",
-        "time": {
-            "day": 4,
-            "start": 2,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 68
+      "id": "mns3118",
+      "code": "MNS3118",
+      "name": "Đánh giá và phát triển văn hóa quản lý",
+      "credits": 3,
+      "lecturer": "Giảng viên 068",
+      "time": {
+        "day": 4,
+        "start": 2,
+        "count": 3
+      },
+      "info": "nghiên cứu văn hóa quản lý trong tổ chức, tức cách giá trị, thái độ và hành vi được thể hiện trong lãnh đạo và quản lý. Nội dung bao gồm đánh giá hiện trạng văn hóa quản lý, nhận diện điểm mạnh, điểm yếu...",
+      "prerequisites": [],
+      "stt": 68
     },
     {
-        "id": "mns3102",
-        "code": "MNS3102",
-        "name": "Xây dựng văn hóa doanh nghiệp (Building Corporate Culture)",
-        "credits": 3,
-        "lecturer": "Giảng viên 069",
-        "time": {
-            "day": 4,
-            "start": 2,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 69
+      "id": "mns3102",
+      "code": "MNS3102",
+      "name": "Xây dựng văn hóa doanh nghiệp",
+      "credits": 3,
+      "lecturer": "Giảng viên 069",
+      "time": {
+        "day": 4,
+        "start": 2,
+        "count": 3
+      },
+      "info": "nghiên cứu cách hình thành, phát triển và duy trì văn hóa trong doanh nghiệp. Nội dung gồm xác định giá trị cốt lõi, tầm nhìn, sứ mệnh và chuẩn mực hành vi phù hợp với chiến lược và mục tiêu của doanh nghiệp.",
+      "prerequisites": [],
+      "stt": 69
     },
     {
-        "id": "mns3092",
-        "code": "MNS3092",
-        "name": "Trách nhiệm xã hội của doanh nghiệp (Corporate Social Responsibility)",
-        "credits": 3,
-        "lecturer": "Giảng viên 070",
-        "time": {
-            "day": 2,
-            "start": 9,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 70
+      "id": "mns3092",
+      "code": "MNS3092",
+      "name": "Trách nhiệm xã hội của doanh nghiệp",
+      "credits": 3,
+      "lecturer": "Giảng viên 070",
+      "time": {
+        "day": 2,
+        "start": 9,
+        "count": 3
+      },
+      "info": "nghiên cứu vai trò và nghĩa vụ của doanh nghiệp đối với xã hội và môi trường. Nội dung gồm các nguyên tắc phát triển bền vững, bảo vệ môi trường, đóng góp cộng đồng và đạo đức kinh doanh.",
+      "prerequisites": [],
+      "stt": 70
     },
     {
-        "id": "mns3119",
-        "code": "MNS3119",
-        "name": "Truyền thông văn hóa quản lý (Management Culture Communication)",
-        "credits": 3,
-        "lecturer": "Giảng viên 071",
-        "time": {
-            "day": 2,
-            "start": 3,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 71
+      "id": "mns3119",
+      "code": "MNS3119",
+      "name": "Truyền thông văn hóa quản lý",
+      "credits": 3,
+      "lecturer": "Giảng viên 071",
+      "time": {
+        "day": 2,
+        "start": 3,
+        "count": 3
+      },
+      "info": "bao gồm các kiến thức lý luận chung về truyền thông, truyền thông đại chúng và các lý thuyết truyền thông cơ bản; các khái niệm, lý luận, thực tiễn và đánh giá về truyền thông quốc tế và đối ngoại...",
+      "prerequisites": [],
+      "stt": 71
     },
     {
-        "id": "mns3120",
-        "code": "MNS3120",
-        "name": "Quản lý tổ chức đa văn hóa (Multicultural Organization Management)",
-        "credits": 3,
-        "lecturer": "Giảng viên 072",
-        "time": {
-            "day": 4,
-            "start": 2,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 72
+      "id": "mns3120",
+      "code": "MNS3120",
+      "name": "Quản lý tổ chức đa văn hóa",
+      "credits": 3,
+      "lecturer": "Giảng viên 072",
+      "time": {
+        "day": 4,
+        "start": 2,
+        "count": 3
+      },
+      "info": "cung cấp kiến thức về sự khác biệt văn hóa, ảnh hưởng của chúng đến quản trị, và các chiến lược quản lý hiệu quả trong môi trường quốc tế.",
+      "prerequisites": [],
+      "stt": 72
     },
     {
-        "id": "mns3143",
-        "code": "MNS3143",
-        "name": "Quản lý kinh tế số (Digital Economy Management)",
-        "credits": 3,
-        "lecturer": "Giảng viên 073",
-        "time": {
-            "day": 5,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 73
+      "id": "mns3143",
+      "code": "MNS3143",
+      "name": "Quản lý kinh tế số",
+      "credits": 3,
+      "lecturer": "Giảng viên 073",
+      "time": {
+        "day": 5,
+        "start": 7,
+        "count": 3
+      },
+      "info": "bao gồm kiến thức nền tảng về kinh tế số, mô hình kinh doanh số, và kỹ năng quản lý trong môi trường số hóa. Cụ thể, học phần trang bị kiến thức về phân tích dữ liệu, trí tuệ nhân tạo, blockchain...",
+      "prerequisites": [],
+      "stt": 73
     },
     {
-        "id": "mns3144",
-        "code": "MNS3144",
-        "name": "Kinh tế xanh và phát triển bền vững (Green Economy and Sustainable Development)",
-        "credits": 3,
-        "lecturer": "Giảng viên 074",
-        "time": {
-            "day": 4,
-            "start": 1,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 74
+      "id": "mns3144",
+      "code": "MNS3144",
+      "name": "Kinh tế xanh và phát triển bền vững",
+      "credits": 3,
+      "lecturer": "Giảng viên 074",
+      "time": {
+        "day": 4,
+        "start": 1,
+        "count": 3
+      },
+      "info": "bao gồm các kiến thức lý thuyết và thực tiễn chuyên sâu, tập trung vào mối quan hệ giữa kinh tế, môi trường và xã hội. Môn học này trang bị cho sinh viên những khái niệm cốt lõi, các công cụ, chính sách...",
+      "prerequisites": [],
+      "stt": 74
     },
     {
-        "id": "mns3145",
-        "code": "MNS3145",
-        "name": "Pháp luật trong quản lý kinh tế (Law in Economic Management)",
-        "credits": 3,
-        "lecturer": "Giảng viên 075",
-        "time": {
-            "day": 3,
-            "start": 9,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 75
+      "id": "mns3145",
+      "code": "MNS3145",
+      "name": "Pháp luật trong quản lý kinh tế",
+      "credits": 3,
+      "lecturer": "Giảng viên 075",
+      "time": {
+        "day": 3,
+        "start": 9,
+        "count": 3
+      },
+      "info": "cung cấp kiến thức nền tảng và chuyên sâu về hệ thống pháp luật điều chỉnh các hoạt động kinh tế, kinh doanh. Nội dung học phần trang bị cho người học khả năng nhận diện, phân tích và áp dụng các quy định...",
+      "prerequisites": [],
+      "stt": 75
     },
     {
-        "id": "mns3146",
-        "code": "MNS3146",
-        "name": "Quản trị doanh nghiệp số (Digital Enterprise Management)",
-        "credits": 3,
-        "lecturer": "Giảng viên 076",
-        "time": {
-            "day": 2,
-            "start": 2,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 76
+      "id": "mns3146",
+      "code": "MNS3146",
+      "name": "Quản trị doanh nghiệp số",
+      "credits": 3,
+      "lecturer": "Giảng viên 076",
+      "time": {
+        "day": 2,
+        "start": 2,
+        "count": 3
+      },
+      "info": "tập trung vào việc áp dụng các công nghệ số vào quá trình quản trị và vận hành doanh nghiệp. Học phần này trang bị cho người học kiến thức và kỹ năng cần thiết để xây dựng và thực thi chiến lược chuyển đổi số...",
+      "prerequisites": [],
+      "stt": 76
     },
     {
-        "id": "mns3147",
-        "code": "MNS3147",
-        "name": "Thương mại điện tử và quản trị chuỗi cung ứng bền vững (E-commerce and Sustainable Supply Chain Management)",
-        "credits": 3,
-        "lecturer": "Giảng viên 077",
-        "time": {
-            "day": 4,
-            "start": 7,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 77
+      "id": "mns3147",
+      "code": "MNS3147",
+      "name": "Thương mại điện tử và quản trị chuỗi cung ứng bền vững",
+      "credits": 3,
+      "lecturer": "Giảng viên 077",
+      "time": {
+        "day": 4,
+        "start": 7,
+        "count": 3
+      },
+      "info": "kết hợp kiến thức về thương mại điện tử với các nguyên tắc bền vững trong quản trị chuỗi cung ứng. Nội dung học phần này giúp người học hiểu rõ cách thức vận hành một chuỗi cung ứng thân thiện với môi trường...",
+      "prerequisites": [],
+      "stt": 77
     },
     {
-        "id": "mns3148",
-        "code": "MNS3148",
-        "name": "Đạo đức kinh doanh, văn hóa doanh nghiệp và trách nhiệm xã hội của doanh nghiệp (Business Ethics, Corporate Culture and Corporate Social Responsibility)",
-        "credits": 3,
-        "lecturer": "Giảng viên 078",
-        "time": {
-            "day": 7,
-            "start": 1,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 78
+      "id": "mns3148",
+      "code": "MNS3148",
+      "name": "Đạo đức kinh doanh, văn hóa doanh nghiệp và trách nhiệm xã hội",
+      "credits": 3,
+      "lecturer": "Giảng viên 078",
+      "time": {
+        "day": 7,
+        "start": 1,
+        "count": 3
+      },
+      "info": "cung cấp kiến thức toàn diện về các chuẩn mực đạo đức, giá trị văn hóa và trách nhiệm đối với xã hội trong hoạt động kinh doanh. Nội dung học phần này trang bị cho người học tư duy quản trị bền vững...",
+      "prerequisites": [],
+      "stt": 78
     },
     {
-        "id": "mns3149",
-        "code": "MNS3149",
-        "name": "Công nghệ Tài chính (Financial Technology)",
-        "credits": 3,
-        "lecturer": "Giảng viên 079",
-        "time": {
-            "day": 2,
-            "start": 2,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 79
+      "id": "mns3149",
+      "code": "MNS3149",
+      "name": "Công nghệ Tài chính",
+      "credits": 3,
+      "lecturer": "Giảng viên 079",
+      "time": {
+        "day": 2,
+        "start": 2,
+        "count": 3
+      },
+      "info": "trang bị kiến thức về cả tài chính và công nghệ để áp dụng vào các dịch vụ tài chính. Nội dung học phần này giúp sinh viên nắm vững các công nghệ đột phá và ứng dụng chúng để đổi mới...",
+      "prerequisites": [],
+      "stt": 79
     },
     {
-        "id": "mns4052",
-        "code": "MNS4052",
-        "name": "Khóa luận tốt nghiệp (Graduation Thesis)",
-        "credits": 5,
-        "lecturer": "Giảng viên 080",
-        "time": {
-            "day": 7,
-            "start": 7,
-            "count": 5
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 80
+      "id": "mns4052",
+      "code": "MNS4052",
+      "name": "Khóa luận tốt nghiệp",
+      "credits": 5,
+      "lecturer": "Giảng viên 080",
+      "time": {
+        "day": 7,
+        "start": 7,
+        "count": 5
+      },
+      "info": "là quy trình thực hiện và hoàn thành một đề tài nghiên cứu dưới sự hướng dẫn của giảng viên. Sinh viên sẽ được đánh giá qua từng giai đoạn và kết quả cuối cùng là một bản khóa luận được bảo vệ trước hội đồng.",
+      "prerequisites": [],
+      "stt": 80
     },
     {
-        "id": "mns4073",
-        "code": "MNS4073",
-        "name": "Các vấn đề đương đại trong quản lý (Contemporary Issues in Management)",
-        "credits": 5,
-        "lecturer": "Giảng viên 081",
-        "time": {
-            "day": 5,
-            "start": 2,
-            "count": 5
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 81
+      "id": "mns4073",
+      "code": "MNS4073",
+      "name": "Các vấn đề đương đại trong quản lý",
+      "credits": 5,
+      "lecturer": "Giảng viên 081",
+      "time": {
+        "day": 5,
+        "start": 2,
+        "count": 5
+      },
+      "info": "tập trung vào việc cập nhật và phân tích các xu hướng, thách thức và cơ hội mới nhất trong lĩnh vực quản lý. Nội dung học phần này không cố định mà thay đổi theo thời gian...",
+      "prerequisites": [],
+      "stt": 81
     },
     {
-        "id": "mns4057",
-        "code": "MNS4057",
-        "name": "Thực tập thực tế (Practical Internship)",
-        "credits": 3,
-        "lecturer": "Giảng viên 082",
-        "time": {
-            "day": 2,
-            "start": 9,
-            "count": 3
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 82
+      "id": "mns4057",
+      "code": "MNS4057",
+      "name": "Thực tập thực tế",
+      "credits": 3,
+      "lecturer": "Giảng viên 082",
+      "time": {
+        "day": 2,
+        "start": 9,
+        "count": 3
+      },
+      "info": "không có nội dung giảng dạy trên lớp mà tập trung vào trải nghiệm thực tế tại một doanh nghiệp, tổ chức.",
+      "prerequisites": [],
+      "stt": 82
     },
     {
-        "id": "mns4054",
-        "code": "MNS4054",
-        "name": "Thực tập tốt nghiệp (Graduation Internship)",
-        "credits": 4,
-        "lecturer": "Giảng viên 083",
-        "time": {
-            "day": 5,
-            "start": 8,
-            "count": 4
-        },
-        "info": "",
-        "prerequisites": [],
-        "stt": 83
+      "id": "mns4054",
+      "code": "MNS4054",
+      "name": "Thực tập tốt nghiệp",
+      "credits": 4,
+      "lecturer": "Giảng viên 083",
+      "time": {
+        "day": 5,
+        "start": 8,
+        "count": 4
+      },
+      "info": "không có nội dung giảng dạy trên lớp mà tập trung vào trải nghiệm thực tế tại một doanh nghiệp, tổ chức.",
+      "prerequisites": [],
+      "stt": 83
     }
-    ],
+  ],
   "tlh": [
     {
       "id": "phi1006",

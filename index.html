@@ -160,6 +160,52 @@
 
     </main>
 
+    <!-- Course Details Modal -->
+    <div id="courseModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 flex justify-between items-start">
+                <div>
+                    <h2 id="modalCourseName" class="text-2xl font-bold"></h2>
+                    <p id="modalCourseCode" class="text-sm text-blue-100 mt-1"></p>
+                </div>
+                <button onclick="closeCourseModal()" class="text-white hover:text-blue-100 text-2xl leading-none">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 space-y-4">
+                <div class="grid grid-cols-2 gap-4 bg-gray-100 p-4 rounded">
+                    <div>
+                        <p class="text-xs text-gray-600 font-semibold">SỐ TÍNH CHỈ</p>
+                        <p id="modalCredits" class="text-2xl font-bold text-blue-600"></p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-600 font-semibold">GIẢNG VIÊN</p>
+                        <p id="modalLecturer" class="text-lg font-semibold text-gray-800"></p>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="text-xs text-gray-600 font-semibold">LỊCH HỌC</p>
+                        <p id="modalSchedule" class="text-lg font-semibold text-gray-800"></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Mô tả môn học</h3>
+                    <p id="modalDescription" class="text-gray-700 leading-relaxed text-justify"></p>
+                </div>
+            </div>
+
+            <div class="sticky bottom-0 bg-gray-50 p-6 border-t flex gap-3 justify-end">
+                <button onclick="closeCourseModal()" class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition">
+                    Đóng
+                </button>
+                <button id="modalAddBtn" onclick="addSubjectFromModal()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+                    <i class="fas fa-plus-circle"></i> Thêm vào lịch
+                </button>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-gray-800 text-white text-center p-4 mt-8">
         <p>&copy; 2025 TRAX. Hỗ trợ sinh viên lập kế hoạch học tập.</p>
     </footer>

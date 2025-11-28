@@ -15,7 +15,9 @@ const calculateGPABtn = document.getElementById('calculateGPABtn');
 const gpaResult = document.getElementById('gpaResult');
 const targetSemesterGPAInput = document.getElementById('targetSemesterGPA');
 
-// --- Initialization ---
+// Modal state
+let courseModalSubject = null;
+
 function init() {
     // Populate Majors
     majors.forEach(m => {
@@ -83,10 +85,18 @@ function renderSubjectList() {
 
     filtered.forEach(sub => {
         const isAdded = mySchedule.some(s => s.id === sub.id);
+        
+        const containerDiv = document.createElement('div');
+        containerDiv.className = 'border rounded-md bg-white shadow-sm space-y-0';
+        
         const div = document.createElement('div');
-        div.className = `p-3 border rounded-md bg-white shadow-sm hover:shadow-md transition flex justify-between items-start ${isAdded ? 'opacity-50 bg-gray-100' : ''}`;
+        div.className = `p-3 hover:shadow-md transition flex justify-between items-start ${isAdded ? 'opacity-50 bg-gray-100' : ''}`;
+        
+        const canAddViaPlus = sub.info && sub.info.trim() !== '';
+        const isKhqlMajor = currentMajor === 'khql';
+        
         div.innerHTML = `
-            <div>
+            <div class="flex-1 ${isKhqlMajor ? 'cursor-pointer' : ''}" onclick="${isKhqlMajor ? `toggleCourseDetails('${sub.id}')` : ''}">
                 <div class="font-bold text-blue-700">${sub.name}</div>
                 <div class="text-xs text-gray-500">Mã: ${sub.code} | ${sub.credits} TC</div>
                 <div class="text-xs text-gray-600 mt-1"><i class="far fa-clock"></i> ${dayMapping[sub.time.day]}, Tiết ${sub.time.start}-${sub.time.start + sub.time.count - 1} (${getPeriodTime(sub.time.start)}-${getPeriodTime(sub.time.start + sub.time.count - 1)})</div>
@@ -96,7 +106,39 @@ function renderSubjectList() {
                 <i class="fas fa-plus-circle fa-lg"></i>
             </button>
         `;
-        subjectList.appendChild(div);
+        
+        // Details panel (initially hidden)
+        const detailsDiv = document.createElement('div');
+        detailsDiv.id = `details-${sub.id}`;
+        detailsDiv.className = 'hidden border-t bg-gray-50 p-4 space-y-3';
+        detailsDiv.innerHTML = `
+            <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="font-semibold text-gray-700">Số tính chỉ</p>
+                    <p class="text-lg font-bold text-blue-600">${sub.credits}</p>
+                </div>
+                <div>
+                    <p class="font-semibold text-gray-700">Giảng viên</p>
+                    <p class="text-gray-800">${sub.lecturer}</p>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold text-gray-700 mb-2">Mô tả môn học</p>
+                <p class="text-gray-700 text-sm leading-relaxed">${sub.info || 'Không có mô tả'}</p>
+            </div>
+            <div class="flex gap-2 justify-end pt-2 border-t">
+                <button onclick="toggleCourseDetails('${sub.id}')" class="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100">
+                    Đóng
+                </button>
+                <button onclick="addSubjectFromDetails('${sub.id}')" class="px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
+                    <i class="fas fa-plus-circle"></i> Thêm vào lịch
+                </button>
+            </div>
+        `;
+        
+        containerDiv.appendChild(div);
+        containerDiv.appendChild(detailsDiv);
+        subjectList.appendChild(containerDiv);
     });
 }
 
@@ -120,6 +162,65 @@ window.removeSubject = function(subjectId) {
     renderSubjectList(); // Re-render to enable button
 };
 
+window.toggleCourseDetails = function(subjectId) {
+    const detailsDiv = document.getElementById(`details-${subjectId}`);
+    if (detailsDiv) {
+        detailsDiv.classList.toggle('hidden');
+    }
+};
+
+window.addSubjectFromDetails = function(subjectId) {
+    addSubject(subjectId);
+    const detailsDiv = document.getElementById(`details-${subjectId}`);
+    if (detailsDiv) {
+        detailsDiv.classList.add('hidden');
+    }
+};
+
+window.openCourseModal = function(subject) {
+    courseModalSubject = subject;
+    
+    document.getElementById('modalCourseName').textContent = subject.name;
+    document.getElementById('modalCourseCode').textContent = `Mã: ${subject.code}`;
+    document.getElementById('modalCredits').textContent = subject.credits;
+    document.getElementById('modalLecturer').textContent = subject.lecturer;
+    
+    const dayName = dayMapping[subject.time.day];
+    const startPeriod = periodTimes[subject.time.start];
+    const endPeriod = periodTimes[subject.time.start + subject.time.count - 1];
+    const startTime = startPeriod.split(' - ')[0];
+    const endTime = endPeriod.split(' - ')[1];
+    document.getElementById('modalSchedule').textContent = `${dayName}, Tiết ${subject.time.start}-${subject.time.start + subject.time.count - 1} (${startTime} - ${endTime})`;
+    
+    document.getElementById('modalDescription').textContent = subject.info || 'Không có mô tả';
+    
+    const isAdded = mySchedule.some(s => s.id === subject.id);
+    const modalAddBtn = document.getElementById('modalAddBtn');
+    if (isAdded) {
+        modalAddBtn.innerHTML = '<i class="fas fa-check-circle"></i> Đã thêm';
+        modalAddBtn.disabled = true;
+        modalAddBtn.className = 'px-4 py-2 bg-gray-400 text-white rounded cursor-not-allowed';
+    } else {
+        modalAddBtn.innerHTML = '<i class="fas fa-plus-circle"></i> Thêm vào lịch';
+        modalAddBtn.disabled = false;
+        modalAddBtn.className = 'px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition';
+    }
+    
+    document.getElementById('courseModal').classList.remove('hidden');
+};
+
+window.closeCourseModal = function() {
+    document.getElementById('courseModal').classList.add('hidden');
+    courseModalSubject = null;
+};
+
+window.addSubjectFromModal = function() {
+    if (courseModalSubject) {
+        addSubject(courseModalSubject.id);
+        closeCourseModal();
+    }
+};
+
 function clearSchedule() {
     if (confirm("Bạn có chắc chắn muốn xóa hết lịch không?")) {
         mySchedule = [];
@@ -127,6 +228,14 @@ function clearSchedule() {
         renderSubjectList();
     }
 }
+
+const subjectColors = [
+    { bg: 'bg-pink-500', hex: '#ec4899' },      // Magenta/Pink
+    { bg: 'bg-yellow-400', hex: '#facc15' },    // Yellow
+    { bg: 'bg-cyan-400', hex: '#22d3ee' },      // Cyan
+    { bg: 'bg-purple-500', hex: '#a855f7' },    // Purple
+    { bg: 'bg-orange-500', hex: '#f97316' },    // Orange
+];
 
 function updateScheduleUI() {
     // 1. Clear existing subject blocks from grid (keep base cells)
@@ -137,10 +246,12 @@ function updateScheduleUI() {
     const conflicts = checkConflicts();
     
     // 3. Render Schedule Blocks
-    mySchedule.forEach(sub => {
+    mySchedule.forEach((sub, index) => {
         const isConflict = conflicts.includes(sub.id);
+        const colorClass = isConflict ? 'bg-red-600 ring-2 ring-red-800' : subjectColors[index % subjectColors.length].bg;
+
         const block = document.createElement('div');
-        block.className = `subject-block rounded p-1 text-xs font-semibold text-white overflow-hidden cursor-pointer shadow-sm transition transform hover:scale-105 z-10 flex flex-col justify-center items-center text-center leading-tight ${isConflict ? 'bg-red-500 ring-2 ring-red-700' : 'bg-blue-500 hover:bg-blue-600'}`;
+        block.className = `subject-block rounded p-1 text-xs font-semibold text-white overflow-hidden cursor-pointer shadow-sm transition transform hover:scale-105 z-10 flex flex-col justify-center items-center text-center leading-tight ${colorClass} hover:opacity-90`;
         
         // Grid positioning (no absolute positioning - let grid handle it)
         block.style.gridColumn = `${sub.time.day}`;
@@ -329,7 +440,14 @@ function calculateGPA() {
     // Update status cells with predictions
     results.forEach(result => {
         const statusCell = document.getElementById(`status-${result.subject.id}`);
-        if (result.requiredCK !== null) {
+        if (result.finalScore !== null) {
+            // All provided - show result
+            const finalScore10 = result.finalScore;
+            statusCell.innerHTML = `<div class="text-xs bg-gray-100 p-2 rounded border border-gray-300">
+                <strong class="text-gray-600">Đã hoàn thành</strong><br/>
+                <span class="text-gray-600">${finalScore10.toFixed(1)}/10</span>
+            </div>`;
+        } else if (result.requiredCK !== null) {
             // CC and GK provided - show required CK
             statusCell.innerHTML = `<div class="text-xs bg-blue-50 p-2 rounded border border-blue-200">
                 <strong>Cần CK ≥</strong><br/>
@@ -341,14 +459,6 @@ function calculateGPA() {
                 <strong>Nếu GK = CK:</strong><br/>
                 <strong>${result.prediction.ifEqual}/10</strong>
             </div>`;
-        } else if (result.finalScore !== null) {
-            // All provided - show result
-            const finalScore10 = result.finalScore;
-            if (finalScore10 >= result.targetScore10) {
-                statusCell.innerHTML = `<span class="text-green-600 font-bold text-xs"><i class="fas fa-check"></i> ${finalScore10.toFixed(1)}/10</span>`;
-            } else {
-                statusCell.innerHTML = `<span class="text-red-600 font-bold text-xs"><i class="fas fa-times"></i> ${finalScore10.toFixed(1)}/10</span>`;
-            }
         } else {
             statusCell.innerHTML = '<span class="text-gray-400 text-xs">-</span>';
         }
@@ -364,11 +474,27 @@ function calculateGPA() {
         const calculatedGPA = totalWeightedScore / totalCredits;
         const calcScore4 = (calculatedGPA / 10 * 4);
         
-        gpaResult.className = "mt-6 p-4 rounded-lg bg-blue-100 border border-blue-300 text-blue-800";
-        gpaResult.innerHTML = `
-            <h3 class="font-bold text-lg mb-2"><i class="fas fa-chart-line"></i> Kết quả</h3>
-            <p>GPA của bạn là <strong>${calcScore4.toFixed(2)}</strong> (hệ 4) / <strong>${calculatedGPA.toFixed(1)}</strong> (hệ 10).</p>
-        `;
+        // Check if user achieved their target for all courses
+        const allAchievedTarget = results.every(r => {
+            if (r.finalScore === null) return false; // Must have all scores
+            return r.finalScore >= r.targetScore10;
+        });
+        
+        if (allAchievedTarget && results.length > 0) {
+            // User achieved all targets
+            gpaResult.className = "mt-6 p-4 rounded-lg bg-green-100 border border-green-300 text-green-800";
+            gpaResult.innerHTML = `
+                <h3 class="font-bold text-lg mb-2"><i class="fas fa-trophy"></i> 🎉 Chúc mừng!</h3>
+                <p>Bạn đã đạt mục tiêu học tập! GPA của bạn là <strong>${calcScore4.toFixed(2)}</strong> (hệ 4) / <strong>${calculatedGPA.toFixed(1)}</strong> (hệ 10).</p>
+            `;
+        } else {
+            // Normal result display
+            gpaResult.className = "mt-6 p-4 rounded-lg bg-blue-100 border border-blue-300 text-blue-800";
+            gpaResult.innerHTML = `
+                <h3 class="font-bold text-lg mb-2"><i class="fas fa-chart-line"></i> Kết quả</h3>
+                <p>GPA của bạn là <strong>${calcScore4.toFixed(2)}</strong> (hệ 4) / <strong>${calculatedGPA.toFixed(1)}</strong> (hệ 10).</p>
+            `;
+        }
     } else if (hasAnyPrediction) {
         gpaResult.className = "mt-6 p-4 rounded-lg bg-blue-100 border border-blue-300 text-blue-800";
         gpaResult.innerHTML = `
