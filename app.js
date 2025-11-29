@@ -479,7 +479,32 @@ function calculateGPA() {
     if (totalCredits > 0) {
         const calculatedGPA = totalWeightedScore / totalCredits;
         const calcScore4 = (calculatedGPA / 10 * 4);
-        document.getElementById('overallGPA').textContent = calcScore4.toFixed(2);
+        const gpaElement = document.getElementById('overallGPA');
+        gpaElement.textContent = calcScore4.toFixed(2);
+        
+        // Change color based on GPA
+        if (calcScore4 >= 3.7) {
+            gpaElement.style.color = '#3B82F6'; // Blue (A+)
+        } else if (calcScore4 >= 3.3) {
+            gpaElement.style.color = '#EC4899'; // Pink (B+)
+        } else if (calcScore4 >= 3.0) {
+            gpaElement.style.color = '#EF4444'; // Red (B)
+        } else if (calcScore4 >= 2.7) {
+            gpaElement.style.color = '#F97316'; // Orange (B-)
+        } else if (calcScore4 >= 2.3) {
+            gpaElement.style.color = '#EAB308'; // Yellow (C+)
+        } else if (calcScore4 >= 2.0) {
+            gpaElement.style.color = '#FBBF24'; // Yellow (C)
+        } else if (calcScore4 >= 1.7) {
+            gpaElement.style.color = '#84CC16'; // Lime (C-)
+        } else if (calcScore4 >= 1.3) {
+            gpaElement.style.color = '#10B981'; // Green (D+)
+        } else if (calcScore4 >= 1.0) {
+            gpaElement.style.color = '#14B8A6'; // Teal (D)
+        } else {
+            gpaElement.style.color = '#DC2626'; // Dark Red (F)
+        }
+        
         document.getElementById('totalCredits').textContent = totalCredits;
     }
     
