@@ -86,11 +86,28 @@ function renderSubjectList() {
     filtered.forEach(sub => {
         const isAdded = mySchedule.some(s => s.id === sub.id);
         
+        // Check prerequisites
+        const prereqIds = sub.prerequisites || [];
+        const fulfilledPrereqs = prereqIds.filter(prereqId => 
+            mySchedule.some(s => s.id === prereqId)
+        );
+        const unfulfilledPrereqs = prereqIds.filter(prereqId => 
+            !mySchedule.some(s => s.id === prereqId)
+        );
+        
+        // Get prerequisite course names
+        const allSubjects = subjectsData[currentMajor] || [];
+        const unfulfilledNames = unfulfilledPrereqs.map(prereqId => {
+            const prereqCourse = allSubjects.find(s => s.id === prereqId);
+            return prereqCourse ? prereqCourse.name : prereqId;
+        });
+        
         const containerDiv = document.createElement('div');
-        containerDiv.className = 'border rounded-md bg-white shadow-sm space-y-0';
+        const hasUnmetPrereq = unfulfilledPrereqs.length > 0;
+        containerDiv.className = `border rounded-md bg-white shadow-sm space-y-0 ${hasUnmetPrereq ? 'ring-2 ring-red-300' : ''}`;
         
         const div = document.createElement('div');
-        div.className = `p-3 hover:shadow-md transition flex justify-between items-start ${isAdded ? 'opacity-50 bg-gray-100' : ''}`;
+        div.className = `p-3 hover:shadow-md transition flex justify-between items-start ${isAdded ? 'opacity-50 bg-gray-100' : ''} ${hasUnmetPrereq ? 'bg-red-50' : ''}`;
         
         const canAddViaPlus = sub.info && sub.info.trim() !== '';
         const isKhqlMajor = currentMajor === 'khql';
@@ -101,8 +118,13 @@ function renderSubjectList() {
                 <div class="text-xs text-gray-500">Mã: ${sub.code} | ${sub.credits} TC</div>
                 <div class="text-xs text-gray-600 mt-1"><i class="far fa-clock"></i> ${dayMapping[sub.time.day]}, Tiết ${sub.time.start}-${sub.time.start + sub.time.count - 1} (${getPeriodTime(sub.time.start)}-${getPeriodTime(sub.time.start + sub.time.count - 1)})</div>
                 <div class="text-xs text-gray-500 italic mt-1">${sub.lecturer}</div>
+                ${hasUnmetPrereq ? `
+                    <div class="mt-2 p-2 bg-red-100 border border-red-300 rounded text-red-700 text-xs font-semibold">
+                        <i class="fas fa-exclamation-circle"></i> Chưa hoàn thành môn tiên quyết: ${unfulfilledNames.join(', ')}
+                    </div>
+                ` : ''}
             </div>
-            <button onclick="addSubject('${sub.id}')" ${isAdded ? 'disabled' : ''} class="text-blue-600 hover:text-blue-800 p-1 disabled:text-gray-400">
+            <button onclick="addSubject('${sub.id}')" ${isAdded || hasUnmetPrereq ? 'disabled' : ''} class="text-blue-600 hover:text-blue-800 p-1 ${isAdded || hasUnmetPrereq ? 'disabled:text-gray-400' : ''}">
                 <i class="fas fa-plus-circle fa-lg"></i>
             </button>
         `;
@@ -111,6 +133,23 @@ function renderSubjectList() {
         const detailsDiv = document.createElement('div');
         detailsDiv.id = `details-${sub.id}`;
         detailsDiv.className = 'hidden border-t bg-gray-50 p-4 space-y-3';
+        
+        let prereqsHtml = '';
+        if (prereqIds.length > 0) {
+            const prereqNamesList = prereqIds.map(prereqId => {
+                const prereqCourse = allSubjects.find(s => s.id === prereqId);
+                return prereqCourse ? `${prereqCourse.code} - ${prereqCourse.name}` : prereqId;
+            });
+            prereqsHtml = `
+                <div>
+                    <p class="font-semibold text-gray-700 mb-2">Môn tiên quyết</p>
+                    <ul class="text-gray-700 text-sm list-disc list-inside">
+                        ${prereqNamesList.map(name => `<li>${name}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+        
         detailsDiv.innerHTML = `
             <div class="grid grid-cols-2 gap-4 text-sm">
                 <div>
@@ -122,6 +161,7 @@ function renderSubjectList() {
                     <p class="text-gray-800">${sub.lecturer}</p>
                 </div>
             </div>
+            ${prereqsHtml}
             <div>
                 <p class="font-semibold text-gray-700 mb-2">Mô tả môn học</p>
                 <p class="text-gray-700 text-sm leading-relaxed">${sub.info || 'Không có mô tả'}</p>
@@ -130,7 +170,7 @@ function renderSubjectList() {
                 <button onclick="toggleCourseDetails('${sub.id}')" class="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100">
                     Đóng
                 </button>
-                <button onclick="addSubjectFromDetails('${sub.id}')" class="px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
+                <button onclick="addSubjectFromDetails('${sub.id}')" ${hasUnmetPrereq ? 'disabled' : ''} class="px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition ${hasUnmetPrereq ? 'opacity-50 cursor-not-allowed' : ''}">
                     <i class="fas fa-plus-circle"></i> Thêm vào lịch
                 </button>
             </div>
@@ -479,32 +519,7 @@ function calculateGPA() {
     if (totalCredits > 0) {
         const calculatedGPA = totalWeightedScore / totalCredits;
         const calcScore4 = (calculatedGPA / 10 * 4);
-        const gpaElement = document.getElementById('overallGPA');
-        gpaElement.textContent = calcScore4.toFixed(2);
-        
-        // Change color based on GPA
-        if (calcScore4 >= 3.7) {
-            gpaElement.style.color = '#3B82F6'; // Blue (A+)
-        } else if (calcScore4 >= 3.3) {
-            gpaElement.style.color = '#EC4899'; // Pink (B+)
-        } else if (calcScore4 >= 3.0) {
-            gpaElement.style.color = '#EF4444'; // Red (B)
-        } else if (calcScore4 >= 2.7) {
-            gpaElement.style.color = '#F97316'; // Orange (B-)
-        } else if (calcScore4 >= 2.3) {
-            gpaElement.style.color = '#EAB308'; // Yellow (C+)
-        } else if (calcScore4 >= 2.0) {
-            gpaElement.style.color = '#FBBF24'; // Yellow (C)
-        } else if (calcScore4 >= 1.7) {
-            gpaElement.style.color = '#84CC16'; // Lime (C-)
-        } else if (calcScore4 >= 1.3) {
-            gpaElement.style.color = '#10B981'; // Green (D+)
-        } else if (calcScore4 >= 1.0) {
-            gpaElement.style.color = '#14B8A6'; // Teal (D)
-        } else {
-            gpaElement.style.color = '#DC2626'; // Dark Red (F)
-        }
-        
+        document.getElementById('overallGPA').textContent = calcScore4.toFixed(2);
         document.getElementById('totalCredits').textContent = totalCredits;
     }
     
