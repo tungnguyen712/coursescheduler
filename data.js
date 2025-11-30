@@ -30,7 +30,7 @@ const subjectsData = {
   "khql": [
     {
       "id": "phi1006",
-      "code": "PHI1006",
+      "code": "phi1006",
       "name": "Triết học Mác - Lênin",
       "credits": 3,
       "lecturer": "Giảng viên 001",
@@ -126,7 +126,7 @@ const subjectsData = {
     },
     {
       "id": "flf1107",
-      "code": "FLF1107",
+      "code": "flf1107",
       "name": "Tiếng Anh B1",
       "credits": 5,
       "lecturer": "Giảng viên 007",
@@ -201,7 +201,7 @@ const subjectsData = {
     },
     {
       "id": "flh1164",
-      "code": "FLH1164",
+      "code": "flh1164",
       "name": "Tiếng Anh Khoa học Xã hội và Nhân văn 1",
       "credits": 3,
       "lecturer": "Giảng viên 012",
@@ -1285,7 +1285,7 @@ const subjectsData = {
   "tlh": [
     {
       "id": "phi1006",
-      "code": "PHI1006",
+      "code": "phi1006",
       "name": "Triết học Mác - Lênin",
       "credits": 3,
       "lecturer": "Giảng viên 001",
@@ -1302,7 +1302,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 002",
       "time": { "day": 3, "start": 7, "count": 2 },
       "info": "",
-      "prerequisites": ["PHI1006"],
+      "prerequisites": ["phi1006"],
       "stt": 2
     },
     {
@@ -1313,7 +1313,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 003",
       "time": { "day": 4, "start": 2, "count": 2 },
       "info": "",
-      "prerequisites": ["PHI1006"],
+      "prerequisites": ["phi1006"],
       "stt": 3
     },
     {
@@ -1346,12 +1346,12 @@ const subjectsData = {
       "lecturer": "Giảng viên 006",
       "time": { "day": 2, "start": 9, "count": 2 },
       "info": "",
-      "prerequisites": ["PHI1006"],
+      "prerequisites": ["phi1006"],
       "stt": 6
     },
     {
       "id": "flf1107",
-      "code": "FLF1107",
+      "code": "flf1107",
       "name": "Tiếng Anh B1",
       "credits": 5,
       "lecturer": "Giảng viên 007",
@@ -1384,7 +1384,7 @@ const subjectsData = {
     },
     {
       "id": "mns1053",
-      "code": "MNS1053",
+      "code": "mns1053",
       "name": "Các phương pháp nghiên cứu khoa học",
       "credits": 3,
       "lecturer": "Giảng viên 010",
@@ -1428,7 +1428,7 @@ const subjectsData = {
     },
     {
       "id": "psy1051",
-      "code": "PSY1051",
+      "code": "psy1051",
       "name": "Tâm lý học đại cương",
       "credits": 3,
       "lecturer": "Giảng viên 014",
@@ -1439,7 +1439,7 @@ const subjectsData = {
     },
     {
       "id": "soc1051",
-      "code": "SOC1051",
+      "code": "soc1051",
       "name": "Xã hội học đại cương",
       "credits": 3,
       "lecturer": "Giảng viên 015",
@@ -1571,24 +1571,24 @@ const subjectsData = {
     },
     {
       "id": "psy2023",
-      "code": "PSY2023",
+      "code": "psy2023",
       "name": "Tâm lý học xã hội",
       "credits": 3,
       "lecturer": "Giảng viên 027",
       "time": { "day": 4, "start": 7, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051"],
+      "prerequisites": ["psy1051"],
       "stt": 27
     },
     {
       "id": "psy1103",
-      "code": "PSY1103",
+      "code": "psy1103",
       "name": "Những vấn đề cơ bản của tâm lý học",
       "credits": 3,
       "lecturer": "Giảng viên 028",
       "time": { "day": 5, "start": 1, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051"],
+      "prerequisites": ["psy1051"],
       "stt": 28
     },
     {
@@ -1610,7 +1610,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 030",
       "time": { "day": 6, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 30
     },
     {
@@ -1654,7 +1654,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 034",
       "time": { "day": 2, "start": 3, "count": 3 },
       "info": "",
-      "prerequisites": ["SOC1051", "MNS1053"],
+      "prerequisites": ["soc1051", "mns1053"],
       "stt": 34
     },
     {
@@ -1681,7 +1681,7 @@ const subjectsData = {
     },
     {
       "id": "sow1105",
-      "code": "SOW1105",
+      "code": "sow1105",
       "name": "Nhập môn Công tác xã hội và An sinh xã hội",
       "credits": 3,
       "lecturer": "Giảng viên 037",
@@ -1714,24 +1714,24 @@ const subjectsData = {
     },
     {
       "id": "psy1150",
-      "code": "PSY1150",
+      "code": "psy1150",
       "name": "Tâm lý học phát triển",
       "credits": 3,
       "lecturer": "Giảng viên 040",
       "time": { "day": 2, "start": 7, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051"],
+      "prerequisites": ["psy1051"],
       "stt": 40
     },
     {
       "id": "psy2031",
-      "code": "PSY2031",
+      "code": "psy2031",
       "name": "Tâm lý học quản lý",
       "credits": 3,
       "lecturer": "Giảng viên 041",
       "time": { "day": 5, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051"],
+      "prerequisites": ["psy1051"],
       "stt": 41
     },
     {
@@ -1742,7 +1742,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 042",
       "time": { "day": 7, "start": 8, "count": 3 },
       "info": "",
-      "prerequisites": ["MNS1053"],
+      "prerequisites": ["mns1053"],
       "stt": 42
     },
     {
@@ -1764,7 +1764,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 044",
       "time": { "day": 3, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 44
     },
     {
@@ -1786,7 +1786,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 046",
       "time": { "day": 4, "start": 7, "count": 3 },
       "info": "",
-      "prerequisites": ["FLF1107", "PSY1103"],
+      "prerequisites": ["flf1107", "psy1103"],
       "stt": 46
     },
     {
@@ -1797,7 +1797,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 047",
       "time": { "day": 5, "start": 3, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 47
     },
     {
@@ -1841,7 +1841,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 051",
       "time": { "day": 4, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["SOW1105"],
+      "prerequisites": ["sow1105"],
       "stt": 51
     },
     {
@@ -1868,7 +1868,7 @@ const subjectsData = {
     },
     {
       "id": "psy2034",
-      "code": "PSY2034",
+      "code": "psy2034",
       "name": "Giải phẫu và sinh lý hệ thần kinh",
       "credits": 2,
       "lecturer": "Giảng viên 054",
@@ -1885,7 +1885,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 055",
       "time": { "day": 3, "start": 9, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2034"],
+      "prerequisites": ["psy2034"],
       "stt": 55
     },
     {
@@ -1896,12 +1896,12 @@ const subjectsData = {
       "lecturer": "Giảng viên 056",
       "time": { "day": 4, "start": 1, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051"],
+      "prerequisites": ["psy1051"],
       "stt": 56
     },
     {
       "id": "psy2030",
-      "code": "PSY2030",
+      "code": "psy2030",
       "name": "Tâm lý học tham vấn",
       "credits": 3,
       "lecturer": "Giảng viên 057",
@@ -1912,46 +1912,46 @@ const subjectsData = {
     },
     {
       "id": "psy2032",
-      "code": "PSY2032",
+      "code": "psy2032",
       "name": "Tâm lý học nhân cách",
       "credits": 3,
       "lecturer": "Giảng viên 058",
       "time": { "day": 5, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1150"],
+      "prerequisites": ["psy1150"],
       "stt": 58
     },
     {
       "id": "psy2014",
-      "code": "PSY2014",
+      "code": "psy2014",
       "name": "Tâm lý học lâm sàng đại cương",
       "credits": 3,
       "lecturer": "Giảng viên 059",
       "time": { "day": 6, "start": 8, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051"],
+      "prerequisites": ["psy1051"],
       "stt": 59
     },
     {
       "id": "psy3060",
-      "code": "PSY3060",
+      "code": "psy3060",
       "name": "Đánh giá tâm lý",
       "credits": 3,
       "lecturer": "Giảng viên 060",
       "time": { "day": 2, "start": 3, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2032"],
+      "prerequisites": ["psy2032"],
       "stt": 60
     },
     {
       "id": "psy2012",
-      "code": "PSY2012",
+      "code": "psy2012",
       "name": "Tâm bệnh học đại cương",
       "credits": 3,
       "lecturer": "Giảng viên 061",
       "time": { "day": 3, "start": 7, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2014"],
+      "prerequisites": ["psy2014"],
       "stt": 61
     },
     {
@@ -1962,7 +1962,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 062",
       "time": { "day": 4, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 62
     },
     {
@@ -1973,7 +1973,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 063",
       "time": { "day": 5, "start": 8, "count": 2 },
       "info": "",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 63
     },
     {
@@ -1984,7 +1984,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 064",
       "time": { "day": 7, "start": 1, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 64
     },
     {
@@ -1995,7 +1995,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 065",
       "time": { "day": 2, "start": 8, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 65
     },
     {
@@ -2017,7 +2017,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 067",
       "time": { "day": 3, "start": 1, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 67
     },
     {
@@ -2028,7 +2028,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 068",
       "time": { "day": 4, "start": 7, "count": 4 },
       "info": "",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 68
     },
     {
@@ -2039,7 +2039,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 069",
       "time": { "day": 5, "start": 3, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051"],
+      "prerequisites": ["psy1051"],
       "stt": 69
     },
     {
@@ -2050,7 +2050,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 070",
       "time": { "day": 2, "start": 9, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051"],
+      "prerequisites": ["psy1051"],
       "stt": 70
     },
     {
@@ -2061,7 +2061,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 071",
       "time": { "day": 3, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051"],
+      "prerequisites": ["psy1051"],
       "stt": 71
     },
     {
@@ -2072,7 +2072,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 072",
       "time": { "day": 7, "start": 8, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051"],
+      "prerequisites": ["psy1051"],
       "stt": 72
     },
     {
@@ -2083,7 +2083,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 073",
       "time": { "day": 6, "start": 1, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 73
     },
     {
@@ -2094,7 +2094,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 074",
       "time": { "day": 4, "start": 8, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY3060", "PSY2012", "PSY2031"],
+      "prerequisites": ["psy3060", "psy2012", "psy2031"],
       "stt": 74
     },
     {
@@ -2110,13 +2110,13 @@ const subjectsData = {
     },
     {
       "id": "psy3064",
-      "code": "PSY3064",
+      "code": "psy3064",
       "name": "Tâm bệnh học trẻ em và thanh thiếu niên",
       "credits": 3,
       "lecturer": "Giảng viên 076",
       "time": { "day": 2, "start": 7, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2012"],
+      "prerequisites": ["psy2012"],
       "stt": 76
     },
     {
@@ -2127,7 +2127,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 077",
       "time": { "day": 3, "start": 1, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2014", "PSY1150", "PSY3064"],
+      "prerequisites": ["psy2014", "psy1150", "psy3064"],
       "stt": 77
     },
     {
@@ -2138,7 +2138,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 078",
       "time": { "day": 7, "start": 3, "count": 4 },
       "info": "",
-      "prerequisites": ["PSY2014"],
+      "prerequisites": ["psy2014"],
       "stt": 78
     },
     {
@@ -2149,7 +2149,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 079",
       "time": { "day": 4, "start": 9, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2014"],
+      "prerequisites": ["psy2014"],
       "stt": 79
     },
     {
@@ -2160,7 +2160,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 080",
       "time": { "day": 5, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1051", "PSY1103", "PSY1154"],
+      "prerequisites": ["psy1051", "psy1103", "PSY1154"],
       "stt": 80
     },
     {
@@ -2171,7 +2171,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 081",
       "time": { "day": 6, "start": 7, "count": 5 },
       "info": "",
-      "prerequisites": ["PSY2014"],
+      "prerequisites": ["psy2014"],
       "stt": 81
     },
     {
@@ -2182,7 +2182,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 082",
       "time": { "day": 2, "start": 1, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2030"],
+      "prerequisites": ["psy2030"],
       "stt": 82
     },
     {
@@ -2193,7 +2193,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 083",
       "time": { "day": 3, "start": 8, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2030"],
+      "prerequisites": ["psy2030"],
       "stt": 83
     },
     {
@@ -2204,7 +2204,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 084",
       "time": { "day": 4, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2030"],
+      "prerequisites": ["psy2030"],
       "stt": 84
     },
     {
@@ -2215,7 +2215,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 085",
       "time": { "day": 7, "start": 9, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2030"],
+      "prerequisites": ["psy2030"],
       "stt": 85
     },
     {
@@ -2226,7 +2226,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 086",
       "time": { "day": 5, "start": 7, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2030"],
+      "prerequisites": ["psy2030"],
       "stt": 86
     },
     {
@@ -2237,7 +2237,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 087",
       "time": { "day": 2, "start": 3, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2030"],
+      "prerequisites": ["psy2030"],
       "stt": 87
     },
     {
@@ -2248,7 +2248,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 088",
       "time": { "day": 6, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY2030"],
+      "prerequisites": ["psy2030"],
       "stt": 88
     },
     {
@@ -2259,7 +2259,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 089",
       "time": { "day": 3, "start": 8, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1150"],
+      "prerequisites": ["psy1150"],
       "stt": 89
     },
     {
@@ -2270,7 +2270,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 090",
       "time": { "day": 4, "start": 1, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1150"],
+      "prerequisites": ["psy1150"],
       "stt": 90
     },
     {
@@ -2281,7 +2281,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 091",
       "time": { "day": 5, "start": 9, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY3060"],
+      "prerequisites": ["psy3060"],
       "stt": 91
     },
     {
@@ -2292,7 +2292,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 092",
       "time": { "day": 7, "start": 2, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1150"],
+      "prerequisites": ["psy1150"],
       "stt": 92
     },
     {
@@ -2303,7 +2303,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 093",
       "time": { "day": 2, "start": 7, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1150"],
+      "prerequisites": ["psy1150"],
       "stt": 93
     },
     {
@@ -2325,7 +2325,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 095",
       "time": { "day": 4, "start": 8, "count": 3 },
       "info": "",
-      "prerequisites": ["PSY1150"],
+      "prerequisites": ["psy1150"],
       "stt": 95
     },
     {
@@ -2358,7 +2358,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 098",
       "time": { "day": 2, "start": 2, "count": 2 },
       "info": "Học phần thay thế Khóa luận tốt nghiệp",
-      "prerequisites": ["PSY2023"],
+      "prerequisites": ["psy2023"],
       "stt": 98
     },
     {
@@ -2369,7 +2369,7 @@ const subjectsData = {
       "lecturer": "Giảng viên 099",
       "time": { "day": 3, "start": 8, "count": 3 },
       "info": "Học phần thay thế Khóa luận tốt nghiệp",
-      "prerequisites": ["PSY2032"],
+      "prerequisites": ["psy2032"],
       "stt": 99
     },
     {
@@ -2387,7 +2387,7 @@ const subjectsData = {
     "qhcc": [
         {
             "id": "phi1006",
-            "code": "PHI1006",
+            "code": "phi1006",
             "name": "Triết học Mác - Lê nin",
             "credits": 3,
             "lecturer": "Giảng viên 001",
@@ -2413,7 +2413,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 2
         },
@@ -2430,7 +2430,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 3
         },
@@ -2477,13 +2477,13 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 6
         },
         {
             "id": "flf1107",
-            "code": "FLF1107",
+            "code": "flf1107",
             "name": "Tiếng Anh B1",
             "credits": 5,
             "lecturer": "Giảng viên 007",
@@ -2573,7 +2573,7 @@ const subjectsData = {
         },
         {
             "id": "mns1053",
-            "code": "MNS1053",
+            "code": "mns1053",
             "name": "Các phương pháp nghiên cứu khoa học",
             "credits": 3,
             "lecturer": "Giảng viên 013",
@@ -2633,7 +2633,7 @@ const subjectsData = {
         },
         {
             "id": "psy1051",
-            "code": "PSY1051",
+            "code": "psy1051",
             "name": "Tâm lý học đại cương",
             "credits": 3,
             "lecturer": "Giảng viên 017",
@@ -2648,7 +2648,7 @@ const subjectsData = {
         },
         {
             "id": "soc1051",
-            "code": "SOC1051",
+            "code": "soc1051",
             "name": "Xã hội học đại cương",
             "credits": 3,
             "lecturer": "Giảng viên 018",
@@ -3538,7 +3538,7 @@ const subjectsData = {
     "qtdvdllh": [
         {
             "id": "phi1006",
-            "code": "PHI1006",
+            "code": "phi1006",
             "name": "Triết học Mác - Lê nin",
             "credits": 3,
             "lecturer": "Giảng viên 001",
@@ -3564,7 +3564,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 2
         },
@@ -3581,7 +3581,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 3
         },
@@ -3628,13 +3628,13 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 6
         },
         {
             "id": "flf1107",
-            "code": "FLF1107",
+            "code": "flf1107",
             "name": "Tiếng Anh B1",
             "credits": 5,
             "lecturer": "Giảng viên 007",
@@ -3709,7 +3709,7 @@ const subjectsData = {
         },
         {
             "id": "mns1053",
-            "code": "MNS1053",
+            "code": "mns1053",
             "name": "Các phương pháp nghiên cứu khoa học",
             "credits": 3,
             "lecturer": "Giảng viên 012",
@@ -3769,7 +3769,7 @@ const subjectsData = {
         },
         {
             "id": "psy1051",
-            "code": "PSY1051",
+            "code": "psy1051",
             "name": "Tâm lí học đại cương",
             "credits": 3,
             "lecturer": "Giảng viên 016",
@@ -3784,7 +3784,7 @@ const subjectsData = {
         },
         {
             "id": "soc1051",
-            "code": "SOC1051",
+            "code": "soc1051",
             "name": "Xã hội học đại cương",
             "credits": 3,
             "lecturer": "Giảng viên 017",
@@ -3960,7 +3960,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "MNS1053"
+                "mns1053"
             ],
             "stt": 28
         },
@@ -4101,7 +4101,7 @@ const subjectsData = {
         },
         {
             "id": "psy2031",
-            "code": "PSY2031",
+            "code": "psy2031",
             "name": "Tâm lý học quản lý",
             "credits": 3,
             "lecturer": "Giảng viên 038",
@@ -4112,7 +4112,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PSY1051"
+                "psy1051"
             ],
             "stt": 38
         },
@@ -4383,7 +4383,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "FLF1107"
+                "flf1107"
             ],
             "stt": 55
         },
@@ -4872,7 +4872,7 @@ const subjectsData = {
     "bc": [
         {
             "id": "phi1006",
-            "code": "PHI1006",
+            "code": "phi1006",
             "name": "Triết học Mác - Lênin",
             "credits": 3,
             "lecturer": "Giảng viên 001",
@@ -4898,7 +4898,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 2
         },
@@ -4915,7 +4915,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 3
         },
@@ -4962,13 +4962,13 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 6
         },
         {
             "id": "flf1107",
-            "code": "FLF1107",
+            "code": "flf1107",
             "name": "Tiếng Anh B1",
             "credits": 5,
             "lecturer": "Giảng viên 007",
@@ -5058,7 +5058,7 @@ const subjectsData = {
         },
         {
             "id": "mns1053",
-            "code": "MNS1053",
+            "code": "mns1053",
             "name": "Các phương pháp nghiên cứu khoa học",
             "credits": 3,
             "lecturer": "Giảng viên 013",
@@ -5103,7 +5103,7 @@ const subjectsData = {
         },
         {
             "id": "soc1051",
-            "code": "SOC1051",
+            "code": "soc1051",
             "name": "Xã hội học đại cương",
             "credits": 3,
             "lecturer": "Giảng viên 016",
@@ -5118,7 +5118,7 @@ const subjectsData = {
         },
         {
             "id": "psy1051",
-            "code": "PSY1051",
+            "code": "psy1051",
             "name": "Tâm lý học đại cương",
             "credits": 3,
             "lecturer": "Giảng viên 017",
@@ -5493,7 +5493,7 @@ const subjectsData = {
         },
         {
             "id": "psy2023",
-            "code": "PSY2023",
+            "code": "psy2023",
             "name": "Tâm lý học xã hội",
             "credits": 3,
             "lecturer": "Giảng viên 042",
@@ -6189,7 +6189,7 @@ const subjectsData = {
     "da": [
         {
             "id": "phi1006",
-            "code": "PHI1006",
+            "code": "phi1006",
             "name": "Triết học Mác-Lênin",
             "credits": 3,
             "lecturer": "Giảng viên 001",
@@ -6215,7 +6215,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 2
         },
@@ -6232,7 +6232,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 3
         },
@@ -6279,13 +6279,13 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PHI1006"
+                "phi1006"
             ],
             "stt": 6
         },
         {
             "id": "flf1107",
-            "code": "FLF1107",
+            "code": "flf1107",
             "name": "Tiếng Anh B1",
             "credits": 5,
             "lecturer": "Giảng viên 007",
@@ -6360,7 +6360,7 @@ const subjectsData = {
         },
         {
             "id": "mns1053",
-            "code": "MNS1053",
+            "code": "mns1053",
             "name": "Các phương pháp nghiên cứu khoa học",
             "credits": 3,
             "lecturer": "Giảng viên 012",
@@ -6420,7 +6420,7 @@ const subjectsData = {
         },
         {
             "id": "psy1051",
-            "code": "PSY1051",
+            "code": "psy1051",
             "name": "Tâm lí học đại cương",
             "credits": 3,
             "lecturer": "Giảng viên 016",
@@ -6435,7 +6435,7 @@ const subjectsData = {
         },
         {
             "id": "soc1051",
-            "code": "SOC1051",
+            "code": "soc1051",
             "name": "Xã hội học đại cương",
             "credits": 3,
             "lecturer": "Giảng viên 017",
@@ -6797,7 +6797,7 @@ const subjectsData = {
         },
         {
             "id": "psy2023",
-            "code": "PSY2023",
+            "code": "psy2023",
             "name": "Tâm lí học xã hội",
             "credits": 3,
             "lecturer": "Giảng viên 041",
@@ -6808,7 +6808,7 @@ const subjectsData = {
             },
             "info": "",
             "prerequisites": [
-                "PSY1051"
+                "psy1051"
             ],
             "stt": 41
         },

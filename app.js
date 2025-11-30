@@ -1,7 +1,7 @@
 // State
 let currentMajor = "";
 let mySchedule = []; // Array of subject objects
-let completedCourses = {}; // Object to store completed courses by semester: { "fall2024": [...], "spring2025": [...] }
+let completedCourses = {}; // Object to store completed courses by ID when all 3 scores filled
 
 // DOM Elements
 const majorSelect = document.getElementById('majorSelect');
@@ -16,13 +16,6 @@ const calculateGPABtn = document.getElementById('calculateGPABtn');
 const gpaResult = document.getElementById('gpaResult');
 const targetSemesterGPAInput = document.getElementById('targetSemesterGPA');
 
-// Past Courses Elements
-const pastCourseMajor = document.getElementById('pastCourseMajor');
-const pastCourseSemester = document.getElementById('pastCourseSemester');
-const pastCoursesTableBody = document.getElementById('pastCoursesTableBody');
-const pastCourseSelect = document.getElementById('pastCourseSelect');
-const pastCourseScore10 = document.getElementById('pastCourseScore10');
-
 // Modal state
 let courseModalSubject = null;
 
@@ -33,14 +26,6 @@ function init() {
         option.value = m.id;
         option.textContent = m.name;
         majorSelect.appendChild(option);
-    });
-
-    // Populate Past Course Major Select
-    majors.forEach(m => {
-        const option = document.createElement('option');
-        option.value = m.id;
-        option.textContent = m.name;
-        pastCourseMajor.appendChild(option);
     });
 
     // Generate Grid Rows (Time slots)
@@ -63,183 +48,18 @@ function init() {
         }
     }
 
-    // Load past courses from localStorage
-    loadPastCourses();
-
     // Event Listeners
     majorSelect.addEventListener('change', handleMajorChange);
     searchSubject.addEventListener('input', filterSubjects);
     clearScheduleBtn.addEventListener('click', clearSchedule);
     calculateGPABtn.addEventListener('click', calculateGPA);
-    pastCourseMajor.addEventListener('change', function() {
-        updatePastCourseSelect();
-        renderPastCoursesTable();
-    });
-    pastCourseSemester.addEventListener('change', function() {
-        updatePastCourseSelect();
-        renderPastCoursesTable();
-    });
 }
-
-// --- Past Courses Logic ---
-
-function loadPastCourses() {
-    const saved = localStorage.getItem('completedCourses');
-    if (saved) {
-        completedCourses = JSON.parse(saved);
-    }
-}
-
-function savePastCourses() {
-    localStorage.setItem('completedCourses', JSON.stringify(completedCourses));
-}
-
-function updatePastCourseSelect() {
-    const majorId = pastCourseMajor.value;
-    pastCourseSelect.innerHTML = '<option value="">-- Chọn môn --</option>';
-    
-    if (majorId && subjectsData[majorId]) {
-        const subjects = subjectsData[majorId];
-        subjects.forEach(sub => {
-            const option = document.createElement('option');
-            option.value = JSON.stringify({
-                id: sub.id,
-                code: sub.code,
-                name: sub.name,
-                credits: sub.credits
-            });
-            option.textContent = `${sub.code} - ${sub.name}`;
-            pastCourseSelect.appendChild(option);
-        });
-    }
-}
-
-window.addPastCourse = function() {
-    const semester = pastCourseSemester.value;
-    const courseJson = pastCourseSelect.value;
-    const score10 = parseFloat(pastCourseScore10.value);
-    
-    if (!semester || !courseJson || isNaN(score10) || score10 < 0 || score10 > 10) {
-        alert('Vui lòng điền đầy đủ thông tin hợp lệ.');
-        return;
-    }
-    
-    const course = JSON.parse(courseJson);
-    
-    // Convert 10-scale to 4-scale
-    const score4 = convertScore10to4(score10);
-    
-    // Determine letter grade
-    let letterGrade = 'F';
-    if (score10 >= 9.0) letterGrade = 'A+';
-    else if (score10 >= 8.5) letterGrade = 'A';
-    else if (score10 >= 8.0) letterGrade = 'B+';
-    else if (score10 >= 7.0) letterGrade = 'B';
-    else if (score10 >= 6.5) letterGrade = 'C+';
-    else if (score10 >= 5.5) letterGrade = 'C';
-    else if (score10 >= 5.0) letterGrade = 'D+';
-    else if (score10 >= 4.0) letterGrade = 'D';
-    
-    // Initialize semester array if needed
-    if (!completedCourses[semester]) {
-        completedCourses[semester] = [];
-    }
-    
-    // Check if course already exists
-    const existingIndex = completedCourses[semester].findIndex(c => c.id === course.id);
-    if (existingIndex !== -1) {
-        completedCourses[semester][existingIndex] = {
-            ...course,
-            score10,
-            score4,
-            letterGrade
-        };
-    } else {
-        completedCourses[semester].push({
-            ...course,
-            score10,
-            score4,
-            letterGrade
-        });
-    }
-    
-    savePastCourses();
-    
-    // Clear inputs
-    pastCourseSelect.value = '';
-    pastCourseScore10.value = '';
-    
-    // Refresh table and subject list to update prerequisite restrictions
-    renderPastCoursesTable();
-    renderSubjectList(); // Re-render to check if any prerequisites are now fulfilled
-};
-
-function renderPastCoursesTable() {
-    const semester = pastCourseSemester.value;
-    const majorId = pastCourseMajor.value;
-    pastCoursesTableBody.innerHTML = '';
-    
-    if (!semester) {
-        pastCoursesTableBody.innerHTML = '<tr class="bg-white border-b"><td colspan="7" class="px-6 py-4 text-center text-gray-400">Vui lòng chọn kỳ học.</td></tr>';
-        if (!majorId) {
-            pastCourseSelect.innerHTML = '<option value="">-- Chọn môn --</option>';
-        } else {
-            updatePastCourseSelect();
-        }
-        return;
-    }
-    
-    // Always update course select options when semester is selected
-    if (majorId) {
-        updatePastCourseSelect();
-    } else {
-        pastCourseSelect.innerHTML = '<option value="">-- Chọn môn --</option>';
-    }
-    
-    const courses = completedCourses[semester] || [];
-    
-    if (courses.length === 0) {
-        pastCoursesTableBody.innerHTML = '<tr class="bg-white border-b"><td colspan="7" class="px-6 py-4 text-center text-gray-400">Chưa có môn học nào cho kỳ này.</td></tr>';
-        return;
-    }
-    
-    courses.forEach(course => {
-        const tr = document.createElement('tr');
-        tr.className = 'bg-white border-b hover:bg-gray-50';
-        tr.innerHTML = `
-            <td class="px-6 py-4 font-medium text-gray-900">${course.code}</td>
-            <td class="px-6 py-4 text-gray-700">${course.name}</td>
-            <td class="px-6 py-4 text-center font-semibold">${course.credits}</td>
-            <td class="px-6 py-4 text-center font-bold text-blue-600">${course.score10.toFixed(2)}</td>
-            <td class="px-6 py-4 text-center font-bold text-purple-600">${course.score4.toFixed(2)}</td>
-            <td class="px-6 py-4 text-center font-semibold text-green-600">${course.letterGrade}</td>
-            <td class="px-6 py-4 text-center">
-                <button onclick="removePastCourse('${semester}', '${course.id}')" class="text-red-600 hover:text-red-800 transition">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        `;
-        pastCoursesTableBody.appendChild(tr);
-    });
-}
-
-window.removePastCourse = function(semester, courseId) {
-    if (confirm('Xóa môn học này?')) {
-        completedCourses[semester] = completedCourses[semester].filter(c => c.id !== courseId);
-        if (completedCourses[semester].length === 0) {
-            delete completedCourses[semester];
-        }
-        savePastCourses();
-        renderPastCoursesTable();
-        renderSubjectList(); // Re-render to update prerequisite restrictions
-    }
-};
 
 // --- Logic ---
 
 function handleMajorChange(e) {
     currentMajor = e.target.value;
-    mySchedule = []; // Reset schedule when changing major? Or keep? Let's reset for safety.
+    mySchedule = []; // Reset schedule when changing major
     updateScheduleUI();
     renderSubjectList();
 }
@@ -267,24 +87,18 @@ function renderSubjectList() {
     filtered.forEach(sub => {
         const isAdded = mySchedule.some(s => s.id === sub.id);
         
-        // Check prerequisites (from current schedule OR completed courses)
+        // Check prerequisites (only count as fulfilled if completed with all 3 scores)
         const prereqIds = sub.prerequisites || [];
         
-        // Check if prerequisite is in current schedule or in completed courses
+        // Check if prerequisite is completed (not just in schedule - must have all 3 scores filled)
         const fulfilledPrereqs = prereqIds.filter(prereqId => {
-            const inSchedule = mySchedule.some(s => s.id === prereqId);
-            const inCompleted = Object.values(completedCourses).some(semesterCourses => 
-                Array.isArray(semesterCourses) && semesterCourses.some(c => c.id === prereqId)
-            );
-            return inSchedule || inCompleted;
+            const isCompleted = completedCourses[prereqId] === true;
+            return isCompleted;
         });
         
         const unfulfilledPrereqs = prereqIds.filter(prereqId => {
-            const inSchedule = mySchedule.some(s => s.id === prereqId);
-            const inCompleted = Object.values(completedCourses).some(semesterCourses => 
-                Array.isArray(semesterCourses) && semesterCourses.some(c => c.id === prereqId)
-            );
-            return !inSchedule && !inCompleted;
+            const isCompleted = completedCourses[prereqId] === true;
+            return !isCompleted;
         });
         
         // Get prerequisite course names
@@ -649,12 +463,18 @@ function calculateGPA() {
             };
         }
 
-        // If all three are filled, calculate final score
+        // If all three are filled, calculate final score and mark as completed
         let finalScore = null;
         if (cc !== null && gk !== null && ck !== null) {
             finalScore = cc * weights.cc + gk * weights.gk + ck * weights.ck;
             totalCredits += sub.credits;
             totalWeightedScore += (finalScore * sub.credits);
+            
+            // Auto-mark as completed when all 3 scores are filled
+            completedCourses[sub.id] = true;
+        } else {
+            // If not all scores filled, remove from completed
+            delete completedCourses[sub.id];
         }
 
         results.push({
@@ -768,6 +588,9 @@ function calculateGPA() {
             <p>Vui lòng nhập ít nhất điểm CC của một môn để dự báo, hoặc nhập đầy đủ CC, GK, CK để tính toán GPA chính xác.</p>
         `;
     }
+    
+    // Refresh course list to show unlocked prerequisites after marking courses complete
+    renderSubjectList();
 }
 
 // Convert 10-scale to 4-scale
