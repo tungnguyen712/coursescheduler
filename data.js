@@ -56,7 +56,7 @@ const subjectsData = {
       },
       "info": "Nghiên cứu các quan hệ xã hội của sản xuất và trao đổi, các quy luật kinh tế trong các phương thức sản xuất, đặc biệt là chủ nghĩa tư bản và thời kỳ quá độ lên chủ nghĩa xã hội.",
       "prerequisites": [
-        "PHI1006"
+        "phi1006"
       ],
       "stt": 2
     },
@@ -73,7 +73,7 @@ const subjectsData = {
       },
       "info": "Nghiên cứu về sự chuyển biến từ chủ nghĩa tư bản lên chủ nghĩa xã hội và sứ mệnh lịch sử của giai cấp công nhân.",
       "prerequisites": [
-        "PHI1006"
+        "phi1006"
       ],
       "stt": 3
     },
@@ -120,7 +120,7 @@ const subjectsData = {
       },
       "info": "Cung cấp kiến thức cơ bản về nguồn gốc, bản chất, chức năng của Nhà nước và Pháp luật; hệ thống pháp luật Việt Nam.",
       "prerequisites": [
-        "PHI1006"
+        "phi1006"
       ],
       "stt": 6
     },
@@ -227,7 +227,7 @@ const subjectsData = {
       },
       "info": "Tiếp nối học phần 1, nâng cao khả năng sử dụng tiếng Anh trong môi trường học thuật và chuyên môn KHXH&NV.",
       "prerequisites": [
-        "FLH1164"
+        "flh1164"
       ],
       "stt": 13
     },

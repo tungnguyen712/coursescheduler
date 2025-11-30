@@ -310,9 +310,9 @@ function renderSubjectList() {
                 <div class="text-xs text-gray-500">Mã: ${sub.code} | ${sub.credits} TC</div>
                 <div class="text-xs text-gray-600 mt-1"><i class="far fa-clock"></i> ${dayMapping[sub.time.day]}, Tiết ${sub.time.start}-${sub.time.start + sub.time.count - 1} (${getPeriodTime(sub.time.start)}-${getPeriodTime(sub.time.start + sub.time.count - 1)})</div>
                 <div class="text-xs text-gray-500 italic mt-1">${sub.lecturer}</div>
-                ${hasUnmetPrereq ? `
-                    <div class="mt-2 p-2 bg-red-100 border border-red-300 rounded text-red-700 text-xs font-semibold">
-                        <i class="fas fa-exclamation-circle"></i> Chưa hoàn thành môn tiên quyết: ${unfulfilledNames.join(', ')}
+                ${prereqIds.length > 0 ? `
+                    <div class="mt-2 p-2 ${hasUnmetPrereq ? 'bg-red-100 border border-red-300 text-red-700' : 'bg-green-100 border border-green-300 text-green-700'} rounded text-xs font-semibold">
+                        <i class="${hasUnmetPrereq ? 'fas fa-exclamation-circle' : 'fas fa-check-circle'}"></i> ${hasUnmetPrereq ? `Chưa hoàn thành: ${unfulfilledNames.join(', ')}` : `Đã hoàn thành tiên quyết`}
                     </div>
                 ` : ''}
             </div>
